@@ -12,12 +12,6 @@ typedef struct Application Application;
 void initialisation_carte(int nom, carte* macarte);
 
 /**
- * \brief: applique l'effet rioboo au joueur adverse
- * \param nom: nom de la carte a initialiser
-*/
-void effet_Rioboo_prochain_tour(map* la_map, joueuse* j, carte* c);
-
-/**
  * \brief: applique l'effet bourard au prochain tour
 */
 void effet_Bourard_prochain_tour(map* la_map, carte* la_carte);

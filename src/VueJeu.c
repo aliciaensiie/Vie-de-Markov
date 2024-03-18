@@ -231,6 +231,7 @@ void chgt_fond_label_effect(VueJeu vj){
         setSpriteColor(vj->fKeyToPressed, 0,0,0,255);
         vj->beforeInfoMenuPhase = vj->phaseactuelle;
         vj->phaseactuelle=PhaseEffet;
+        
     }
     else{
         setCanLabelBeDrawn(vj->tourjoueuse, 1);

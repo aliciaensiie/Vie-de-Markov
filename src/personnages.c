@@ -97,19 +97,6 @@ void move_personnage(personnage *perso,map *la_map)
 
       j+=1;
     }
-    for(int k=0;k<10;k++){
-      if(perso->pouvoirs[k]==Pacave){
-        // Effet Pacave : le personnage ne peux pas aller sur la zone 11 
-        while(j == 10){
-          proba_tiree =rand() % 100 +1 ;
-          j=0;
-          while (proba_tiree > proba_cumulee[j] && j<i-1){
-            j+=1;
-          }
-        }
-      }
-    }
-
     perso->zone = j;
     setPjZone( ajouter_pzliste(getPj_Zone(zone_recherche(la_map, perso->zone)), perso), zone_recherche(la_map, perso->zone));
     free(proba_cumulee);

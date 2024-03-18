@@ -19,10 +19,6 @@ enum titre {
     
     Honore, /*Chaque monstre se déplace 3 fois. Chaque membre d'école qu'un monstre rencontre est mangé.*/
     
-    Rioboo, /*Lors du prochain tour, la joueuse adverse ne choisit pas comment est utilisé son capital. 
-    Chaque point de capital est utilisé aléatoirement: pour chaque point, 
-    choisissez les trois zones Z1, Z2 et Z3 uniformément parmi les triplets pouvant être choisis.*/
-    
     Goilard, /*Lors du prochain tour et du suivant, c'est vous qui jouez. 
     Lors des deux tours suivant, c'est la joueuse adverse qui joue.*/
     
@@ -43,16 +39,10 @@ enum titre {
     DembeleCabot, /*Sacrifiez un membre de votre école de votre choix. 
     Vous avez 15 points de capital en plus à votre prochain tour.*/
     
-    Pacave, /*Créez une nouvelle zone. Les membres de votre école sont les seuls à pouvoir se déplacer sur cette zone. 
-    Un membre de l'école de l'autre joueuse qui devrait se déplacer sur cette zone ne se déplace pas. 
-    La probabilité d'aller sur cette zone est de 0. Depuis cette zone, la probabilité de rester sur cette zone est 1.*/
-    
     Huet, /*Chaque zone effectue une rotation de probabilité. La probabilité d'aller de la zone i à la zone j devient la probabilité d'aller de la zone i à la zone j + 1. 
     La probabilité d'aller de la zone i à la zone 10 devient la probabilité d'aller de la zone i à la zone 1.*/
     
     Matias, /*Chaque monstre disparaît pendant 2 tours. Il réapparaîtra sur la zone d'où il est parti.*/
-    
-    Salhab, /*Pendant vos 3 prochains tours, un point de capital permet de déplacer une quantité 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ou 1 de probabilité.*/
     
     PulidoNino, /*Mettez à 0 les probabilités permettant de sortir de la zone de chaque monstre et mettez à 1 la probabilité de rester dans la zone de chaque monstre.*/
     

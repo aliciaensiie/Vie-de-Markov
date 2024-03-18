@@ -28,14 +28,14 @@ struct joueuse {
 void creation_main_joueuse(joueuse *j1, Application* app){
 
   //creation du deck
-  int deck[20];
-  for (int i=1;i<=20;i++){
+  int deck[17];
+  for (int i=1;i<=17;i++){
     deck[i-1]=i;
   }
 
   //melange des cartes
-  for (int i = 0; i < 20; i++) {
-    int j = rand() % 20;
+  for (int i = 0; i < 17; i++) {
+    int j = rand() % 17;
     int temp = deck[i];
     deck[i] = deck[j];
     deck[j] = temp;
@@ -46,10 +46,6 @@ void creation_main_joueuse(joueuse *j1, Application* app){
     carte *carte_suivante_j1= malloc(getSizeOfCarte());
     int vraicompteur=deck[compteur];
     int j=1;
-    while (vraicompteur==(int)Salhab || vraicompteur==(int)Pacave || vraicompteur==(int) Rioboo){
-        vraicompteur=deck[(compteur+5*j)%20];
-        j++;
-    }
 
     setNom(deck[compteur],carte_suivante_j1);
 

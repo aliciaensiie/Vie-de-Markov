@@ -29,7 +29,6 @@ int main()
     add_Texture(app, "Ressources/Texture/merabet_bleu.png", Merabettex);
     add_Texture(app, "Ressources/Texture/Bannourd_bleu.png", Bannourtex); 
     add_Texture(app, "Ressources/Texture/honore_bleu.png", Honoretex);  
-    add_Texture(app, "Ressources/Texture/rioboo_bleu.png", Riobootex); 
     add_Texture(app, "Ressources/Texture/goilard_bleu.png", Goilardtex); 
     add_Texture(app, "Ressources/Texture/bourard_bleu.png", Bourardtex); 
     add_Texture(app, "Ressources/Texture/munante_bleu.png", Munantetex); 
@@ -37,10 +36,8 @@ int main()
     add_Texture(app, "Ressources/Texture/ligozat_bleu.png", Ligozattex); 
     add_Texture(app, "Ressources/Texture/mouilleron_bleu.png", Mouillerontex); 
     add_Texture(app, "Ressources/Texture/dc_bleu.png", Dembeletex); 
-    add_Texture(app, "Ressources/Texture/pacave_bleu.png", Pacavetex); 
     add_Texture(app, "Ressources/Texture/huet_bleu.png", Huettex); 
     add_Texture(app, "Ressources/Texture/matias_bleu.png", Matiastex); 
-    add_Texture(app, "Ressources/Texture/salhab_bleu.png", Salhabtex); 
     add_Texture(app, "Ressources/Texture/pn_bleu.png", Pulidotex); 
     add_Texture(app, "Ressources/Texture/watel_bleu.png", Wateltex); 
     add_Texture(app, "Ressources/Texture/szafranski_bleu.png", Szafranskitex); 

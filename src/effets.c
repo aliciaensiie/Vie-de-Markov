@@ -19,7 +19,7 @@ void initialisation_carte(int nom, carte* macarte){
 
     switch (nom) {
 
-        case 1 : 
+        case (int)Merabet : 
 
         setNom(Merabet,macarte);
         setDesc( "Merabet : Pendant vos 3 prochains tours, votre capital augmente de 2." ,macarte) ;
@@ -27,7 +27,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(3,macarte);
         break;
 
-        case 2 : 
+        case (int)Bannour : 
 
         setNom(Bannour ,macarte) ;
         setDesc( "Bannour : Choisissez deux zones, les personnages présents sur ces deux zones sont échangés.",macarte) ;
@@ -35,7 +35,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(0,macarte);
         break;
 
-        case 3 : 
+        case (int)Honore : 
 
         setNom(Honore,macarte);
         setDesc("Honore : Chaque monstre se déplace 3 fois. Chaque membre d école qu un monstre rencontre est mangé.",macarte)  ;
@@ -43,15 +43,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(0,macarte);
         break;
 
-        case 4:
-
-        setNom(Rioboo,macarte) ;
-        setDesc("Rioboo : Lors du prochain tour, le joueur adverse ne choisis pas comment est utilisé son capital. Chaque point de capital est utilisé aléatoirement.",macarte)  ;
-        setEtatCarte(INACTIVE,macarte);  
-        setNbTour(2,macarte);
-        break;
-
-        case 5 :
+        case (int)Goilard :
 
         setNom( Goilard ,macarte) ;
         setDesc("Goilard : Lors du prochain tour et du suivant, c est vous qui jouez. Lors des deux tours suivant, c'est la joueuse adverse qui joue.",macarte)  ;
@@ -59,7 +51,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(4,macarte) ;
         break;
 
-        case 6 :
+        case (int)Bourard :
 
         setNom(Bourard,macarte)  ;
         setDesc("Bourard : Lors du prochain déplacement, si deux membres d écoles adverses se retrouvent sur la même zone, ils se déplacent de nouveau. Si ces deux membres sont sur la zone du monstre avant le second déplacement, ils ne sont pas mangés. On recommence l'opération au plus 100 fois, jusqu'à ce que les membres des écoles adverses soient sur des zones distinctes.",macarte)  ;
@@ -67,7 +59,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(2,macarte);
         break;
 
-        case 7 :
+        case (int)Munante :
 
         setNom( Munante,macarte) ;
         setDesc("Munante : Les membres d écoles présents sur la zone où était un monstre avant son dernier déplacement sont mangés.",macarte)  ;
@@ -75,7 +67,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(0,macarte);
         break;
 
-        case 8 : 
+        case (int)Benezet : 
 
         setNom(Benezet,macarte)  ;
         setDesc("Benezet : Déplacez un des monstres sur la zone de votre choix. Si un membre d école se trouve sur la zone du monstre, il n est pas mangé.",macarte)  ;
@@ -84,7 +76,7 @@ void initialisation_carte(int nom, carte* macarte){
         break;
 
 
-        case 9 :
+        case (int)Ligozat :
 
         setNom(Ligozat,macarte)  ;
         setDesc( "Ligozat : Choisissez un membre de votre école, il effectue désormais deux déplacements au lieu d un à chaque tour.",macarte) ;
@@ -92,7 +84,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(-1,macarte) ;
         break;
 
-        case 10 :
+        case (int)Mouilleron :
 
         setNom(Mouilleron,macarte)  ;
         setDesc( "Mouilleron : Choisissez un membre de l école de la joueuse adverse. Ce membre devient un membre de votre école.",macarte) ;
@@ -100,7 +92,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(-1,macarte) ;
         break;
 
-        case 11 :
+        case (int)DembeleCabot :
 
         setNom( DembeleCabot,macarte) ;
         setDesc("DembeleCabot : Sacrifiez un membre de votre école de votre choix. Vous avez 15 points de capital en plus à votre prochain tour.",macarte)  ;
@@ -108,15 +100,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(1,macarte) ;
         break;
 
-        case 12 :
-
-        setNom(  Pacave ,macarte);
-        setDesc("Pacave : Créez une nouvelle zone. Les membres de votre école sont les seuls à pouvoir se déplacer sur cette zone. Un membre de l école de l autre joueuse qui devrait se déplacer sur cette zone ne se déplace pas. La probabilité d'aller sur cette zone est de 0. Depuis cette zone, la probabilité de rester sur cette zone est 1",macarte)  ;
-        setEtatCarte( INACTIVE,macarte) ; 
-        setNbTour(0,macarte) ;
-        break;
-
-        case 13 :
+        case (int)Huet :
 
         setNom( Huet,macarte) ;
         setDesc("Huet : Chaque zone effectue une rotation de probabilité. La probabilité d aller de la zone i à la zone j devient la probabilité d'aller de la zone i à la zone j + 1. La probabilité d'aller de la zone i à la zone 10 devient la probabilité d'aller de la zone i à la zone 1.",macarte)  ;
@@ -125,7 +109,7 @@ void initialisation_carte(int nom, carte* macarte){
         break;
     
 
-        case 14 :
+        case (int)Matias :
 
         setNom(Matias,macarte)  ;
         setDesc("Matias : Chaque monstre disparaît pendant 2 tours. Il réapparaîtra sur la zone d où il est parti.",macarte)  ;
@@ -133,15 +117,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour( 2,macarte);
         break;
 
-        case 15 :
-
-        setNom(Salhab,macarte)  ;
-        setDesc( "Salhab : Pendant vos 3 prochains tours, un point de capital permet de déplacer une quantité 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9 ou 1 de probabilité.",macarte) ;
-        setEtatCarte( INACTIVE,macarte) ; 
-        setNbTour(4,macarte) ;
-        break;
-
-        case 16 :
+        case (int)PulidoNino :
 
         setNom(PulidoNino,macarte)  ;
         setDesc("PulidoNino : Mettez à 0 les probabilités permettant de sortir de la zone de chaque monstre et mettez à 1 la probabilité de rester dans la zone de chaque monstre.",macarte)  ;
@@ -149,7 +125,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(0,macarte) ;
         break;
 
-        case 17 : 
+        case (int)Watel : 
 
         setNom(Watel,macarte)  ;
         setDesc( "Watel : Choisissez un membre de votre école, il devient FISA et effectue désormais son déplacement un tour sur deux.",macarte) ;
@@ -157,14 +133,14 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(-1,macarte) ;
         break;
 
-        case 18:
+        case (int)Szafranski:
 
         setNom(Szafranski,macarte)  ;
         setDesc("Szafranski : un monstre sera ajouté sur la zone 1, un membre de votre école sera ajouté sur la zone 2 et un membre de l école adverse sera ajouté sur la zone 3. Si un membre d école se trouve sur la même zone qu'un monstre, il n'est pas mangé.",macarte)  ;
         setEtatCarte(INACTIVE,macarte)  ; 
         setNbTour(0,macarte) ;
         break;
-        case 19 :
+        case (int)Forest :
 
         setNom(Forest,macarte)  ;
         setDesc("Forest : Mettez toutes les probabilités à 0. Puis, pour chaque zone, la probabilité de se déplacer de cette zone vers la zone contenant le monstre passe à 0.5 (si il y a plusieurs monstres, un des monstres est choisi aléatoirement) ; et la probabilité de se déplacer de cette zone vers une autre zone ne contenant pas de monstre choisie aléatoirement passe également à 0.5",macarte)  ;
@@ -172,7 +148,7 @@ void initialisation_carte(int nom, carte* macarte){
         setNbTour(0,macarte) ;
         break;
 
-        case 20 :
+        case (int)Prevel :
 
         setNom(Prevel,macarte)  ;
         setDesc( "Prevel : Pendant 4 tours, les membres de votre école ne peuvent être mangés par un monstre. Si ils sont sur sa zone à la fin du tour, rien ne se passe, ils restent sur cette case.",macarte) ;
@@ -227,41 +203,6 @@ void effet_Honore(personnage* monstre, joueuse* j1, joueuse* j2, map* la_map, ca
         manger_les_persos(j1,j2,monstre);
         liste_monstre=monstre;
     }
-    
-}
-/* z2 est la zone pivot*/
-void effet_Rioboo(joueuse* j_adverse, carte* c)
-{
-    setEtatCarte(UTILISEE, c);
-    carte* new_carte=malloc(getSizeOfCarte());
-    memcpy(new_carte, c, getSizeOfCarte());
-    setEtatCarte(ACTIVE, new_carte);
-    setMain( ajouter_cliste(getMain(j_adverse),new_carte), j_adverse);
-    
-}
-
-
-//matrice set aleatoirement 
-void effet_Rioboo_prochain_tour(map* la_map, joueuse* j, carte* c){
-        srand(time(NULL));
-        double** matrice = getMatrice(la_map);
-        int capital = getCapital(j);
-        int i=0;
-        while(i<capital)
-            {
-                int z1 = rand()%10;
-                int z2 = rand()%10;
-                int z3 = rand()%10;
-                if(matrice[z1][z2]>0 && matrice[z1][z3]<1){
-                    matrice[z1][z2] -=0.1;
-                    matrice[z1][z3] +=0.1;
-                    i+=1;
-                }
-                
-            }
-        setMatrice(matrice,la_map);
-        setEtatCarte(UTILISEE, c); 
-    
     
 }
 
@@ -474,53 +415,6 @@ void effet_Dembele_Cabot_prochain_tour(joueuse* j, carte* la_carte){
 }
 
 
-void effet_Pacave(map* la_map, carte* c, joueuse* jadverse)
-{
-    setEtatCarte(ACTIVE, c);
-    double** mat_courante= getMatrice(la_map);
-    double** new_mat = creer_graphe(11);
-    for (int i =0; i<11; i+=1)
-        {
-            for(int j=0; j<11; j+=1)
-            {
-                if (i==10 && j==10){
-                    new_mat[i][j]=1;
-                }
-                else if (i==10 || j==10){
-                    new_mat[i][j] = 0;      
-                }   
-                else {new_mat[i][j]=mat_courante[i][j];}
-            }
-        }
-    free_graphe(mat_courante, getTaille(la_map));
-    setMatrice(new_mat,la_map);
-
-    setTaille(la_map, 11);
-
-    zone* new_zone=malloc(getSizeOfZone());
-    setId(10, new_zone);
-    setPjZone(NULL, new_zone);
-    setZoneSuivante(new_zone, NULL);
-    zone* liste_zone=getCases(la_map);
-    while (getZoneSuivante(liste_zone)!=NULL){
-        liste_zone=getZoneSuivante(liste_zone);
-    }
-    setZoneSuivante(liste_zone, new_zone);
-
-    personnage* pa=membre_joueur(jadverse);
-    while (pa!=NULL){
-        enum titre* pouvoir= getPouvoirs(pa);
-        int i=0;
-        while (pouvoir[i]!=0){
-            i+=1;
-        }
-        pouvoir[i]=Pacave;
-        pa=getPersonnageSuivantJoueur(pa);
-    }
-    
-}
-
-
 void effet_Huet(map* la_map, carte* c)
 {
     setEtatCarte(UTILISEE, c);
@@ -566,19 +460,6 @@ void effet_Matias_prochain_tour(carte* c, joueuse* monstre){
             setEtatPerso(vivant, pmonstre);
             pmonstre=getPersonnageSuivantJoueur(pmonstre);
         }
-    }
-}
-
-//  warning l'activation de cette carte doit être pris en compte dans utilisation capital
-void effet_Salhab(carte* c)
-{
-    setEtatCarte(ACTIVE, c); 
-}
-
-void effet_Salhab_prochain_tour(carte* c){
-    setNbTour(getNbTour(c)-1,c);
-    if (getNbTour(c)==0){
-        setEtatCarte(UTILISEE, c);
     }
 }
 
@@ -770,11 +651,11 @@ int jouer_une_carte(joueuse* joueuse1, joueuse* joueuse2,joueuse* monstre, int n
     carte* la_carte=parcourir_cliste(main_courante, carte_dans_main(main_courante,numero_carte));
     switch (numero_carte) {
 
-        case 1 : 
+        case (int)Merabet : 
             effet_Merabet(la_carte);
             break;
 
-        case 2 :
+        case (int)Bannour :
   
          {
             if (zone1 != 0 && zone2 !=0){
@@ -787,33 +668,29 @@ int jouer_une_carte(joueuse* joueuse1, joueuse* joueuse2,joueuse* monstre, int n
             }
         }
 
-        case 3 : 
+        case (int)Honore : 
         {
             personnage* l_monstre=membre_joueur(monstre);
             
             effet_Honore(l_monstre, joueuse_ce_tour, joueuse_adverse, la_map, la_carte);
             break;
         }
-        case 4:
-            effet_Rioboo(joueuse_adverse, la_carte);
-            break;
-
-        case 5 :
+        case (int)Goilard :
             effet_Goilard(la_carte, joueuse_adverse);
             break;
 
-        case 6 :
+        case (int)Bourard :
             effet_Bourard(la_carte);
             break;
 
-        case 7 :
+        case (int)Munante :
         {
             personnage* l_monstre=membre_joueur(monstre);
             effet_Munante(l_monstre, la_map, la_carte );
             break;
         }
 
-        case 8 : {
+        case (int)Benezet : {
             if(zone1 !=0 && zone2 !=0){
                 effet_Benezet(la_carte, la_map,zone1,zone2);
                 break;
@@ -823,7 +700,7 @@ int jouer_une_carte(joueuse* joueuse1, joueuse* joueuse2,joueuse* monstre, int n
         }
 
 
-        case 9 :
+        case (int)Ligozat :
         {
             if(zone1 !=0){
             effet_Ligozat(la_map, la_carte, joueuse_ce_tour,zone1);
@@ -833,7 +710,7 @@ int jouer_une_carte(joueuse* joueuse1, joueuse* joueuse2,joueuse* monstre, int n
             }
         }
 
-        case 10 :
+        case (int)Mouilleron :
         {
             if(zone1 !=0){
             effet_Mouilleron(la_map, la_carte, joueuse_adverse,  joueuse_ce_tour,zone1, app);
@@ -842,7 +719,7 @@ int jouer_une_carte(joueuse* joueuse1, joueuse* joueuse2,joueuse* monstre, int n
                 return 1;
             }            
         }
-        case 11 :
+        case (int)DembeleCabot :
         {
             if(zone1 != 0){
             effet_Dembele_Cabot(joueuse_ce_tour, la_carte, la_map,zone1);
@@ -852,28 +729,21 @@ int jouer_une_carte(joueuse* joueuse1, joueuse* joueuse2,joueuse* monstre, int n
                 return 1;
             }            
         }
-        case 12 :
-             effet_Pacave(la_map, la_carte, joueuse_adverse);
-            break;
 
-        case 13 :
+        case (int)Huet :
             effet_Huet(la_map, la_carte);
             break;
     
 
-        case 14 :
+        case (int)Matias :
             effet_Matias(la_carte, monstre);
             break;
 
-        case 15 :
-            effet_Salhab(la_carte);
-             break;
-
-        case 16 :
+        case (int)PulidoNino :
             effet_Pulido(la_carte, la_map, monstre);
             break;
 
-        case 17 :
+        case (int)Watel :
         { 
             if(zone1 != 0)
             {
@@ -884,15 +754,15 @@ int jouer_une_carte(joueuse* joueuse1, joueuse* joueuse2,joueuse* monstre, int n
             }
         }
 
-        case 18 :
+        case (int)Szafranski :
             effet_Szafranski(la_carte,la_map, joueuse_ce_tour, joueuse_adverse, monstre,app);
             break;
     
-        case 19 :
+        case (int)Forest :
             effet_Forest( la_carte, monstre, la_map);
              break;
 
-        case 20 :
+        case (int)Prevel :
              effet_Prevel(la_carte, joueuse_ce_tour);
             break;
 
@@ -913,9 +783,6 @@ int activate_carte(joueuse* joueuse_ce_tour, joueuse* monstre){
             switch (getNom(main)){
                 case Merabet: 
                     effet_Merabet_prochain_tour(joueuse_ce_tour, main);
-                    break; 
-
-                case Rioboo:
                     break;
 
                 case Goilard: 
@@ -930,17 +797,10 @@ int activate_carte(joueuse* joueuse_ce_tour, joueuse* monstre){
 
                 case DembeleCabot:
                     effet_Dembele_Cabot_prochain_tour(joueuse_ce_tour, main);
-                    break; 
-
-                case Pacave:
-                    break; 
+                    break;
 
                 case Matias:
                     effet_Matias_prochain_tour(main, monstre);
-                    break; 
-
-                case Salhab:
-                    effet_Salhab_prochain_tour(main);
                     break; 
 
                 case Watel:

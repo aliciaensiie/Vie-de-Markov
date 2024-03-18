@@ -11,10 +11,10 @@ HDRD=headers
 OBJD=obj
 BIND=bin
 
-PROJET_O=VueJeu.o structures.o cartes.o zones.o joueuses.o personnages.o main.o effets.o
+PROJET_O=VueJeu.o structures.o cartes.o zones.o joueuses.o personnages.o effets.o main.o
 
 #nom de l'éxécutable
-TARGET=jeu.out
+TARGET=jeu
 #pour inclure la librairie statique dans la compilation
 LIB=./CSFML/lib
 #pour in clude la librairie sfml dans la compilation
@@ -32,11 +32,12 @@ LFLAGS_sfml=-lsfml-system -lsfml-graphics -lsfml-window -lsfml-audio
 #flags pour le linker vis-à-vis de csfml
 LFLAGS_Csfml=-lm -lcsfml-f
 
-$(BIND)/$(TARGET): $(addprefix $(OBJD)/, $(PROJET_O))
+jeu: $(addprefix $(OBJD)/, $(PROJET_O))
 	$(PP) $^ -o $@ -L"$(LIB)" -L"$(LIBSFML)" $(LFLAGS_Csfml) $(LFLAGS_sfml)
 
-$(OBJD)/%.o: $(SRCD)/%.c
+$(OBJD)/%.o: $(SRCD)/%.c $(HDRD)/%.h
 	$(CC) $(CFLAGS) -c $< -o $@ -I"$(INCLUDE)"
 
-clean:
-	rm -f example_exec $(FILE_OBJ)
+$(OBJD)/main.o: $(SRCD)/main.c
+	$(CC) $(CFLAGS) -c $< -o $@ -I"$(INCLUDE)"
+

@@ -1,0 +1,278 @@
+\hypertarget{LabelWrapper_8h}{}\doxysection{Label\+Wrapper.\+h File Reference}
+\label{LabelWrapper_8h}\index{LabelWrapper.h@{LabelWrapper.h}}
+
+
+wrapper pour l\textquotesingle{}objet label  
+
+
+{\ttfamily \#include \char`\"{}Utility.\+h\char`\"{}}\newline
+Include dependency graph for Label\+Wrapper.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{LabelWrapper_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} \mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}}
+\begin{DoxyCompactList}\small\item\em objet permettant d\textquotesingle{}afficher du texte sur l\textquotesingle{}Application. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LabelWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}\label{LabelWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}} 
+typedef struct \mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} {\bfseries Application}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$ \mbox{\hyperlink{LabelWrapper_8h_a28185e6bd120924ac0b821dbb9bc7abc}{add\+New\+Label}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, int font\+ID, const char $\ast$text, int layer)
+\begin{DoxyCompactList}\small\item\em un pointeur de fonction optionel pour set la fonction appelé juste avant le draw call \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structFloatRect}{Float\+Rect}} \mbox{\hyperlink{LabelWrapper_8h_a909eb5427b344299efd2214193aed0e5}{get\+Label\+Bounding\+Box}} (\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$label)
+\begin{DoxyCompactList}\small\item\em getter pour le rectangle englobant le Label \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LabelWrapper_8h_a1023a70077d9049a7ffb7756b12b30db}{set\+Label\+Text}} (\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$label, const char $\ast$new\+\_\+text)
+\begin{DoxyCompactList}\small\item\em setter pour le texte du Label \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{LabelWrapper_8h_aa0191250e103c1cbb918019fcd3c5763}{get\+Label\+Text}} (\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$label)
+\begin{DoxyCompactList}\small\item\em getter pour le texte du Label \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LabelWrapper_8h_ade76ac12628c51469fa744be7c483311}{set\+Character\+Size}} (\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$label, unsigned int char\+Size)
+\begin{DoxyCompactList}\small\item\em setter pour la taille des caractères du texte du Label (par défaut 20) \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{LabelWrapper_8h_a66a91f38bb1dbd3b4d4f453e8ce22941}{get\+Character\+Size}} (\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$label)
+\begin{DoxyCompactList}\small\item\em getter pour la taille actuelle des caractères d\textquotesingle{}un Label \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LabelWrapper_8h_ab95c7da49914dbcfc0a0c94d25e6bd3d}{append\+Label\+Text}} (\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$label, const char $\ast$text\+To\+Add)
+\begin{DoxyCompactList}\small\item\em ajoute la chaine de caractère {\itshape text\+To\+Add} à la fin du texte du Label \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{LabelWrapper_8h_a3b370753cd4d015b1f396d54567f4dbe}{can\+Label\+Be\+Drawn}} (\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em getter pour savoir si ce label peut être dessiner à l\textquotesingle{}écran ou pas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{LabelWrapper_8h_abb1582ccd4e3787912a544642c289a31}{set\+Can\+Label\+Be\+Drawn}} (\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$label, int flag)
+\begin{DoxyCompactList}\small\item\em setter pour faire en sorte que le Label puisse être dessiner ou pas à l\textquotesingle{}écran \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+wrapper pour l\textquotesingle{}objet label 
+
+\begin{DoxyAuthor}{Author}
+Félicien Fiscus (\href{mailto:felicien.fgay@gmail.com}{\texttt{ felicien.\+fgay@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+Label.\+h 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}\label{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!Label@{Label}}
+\index{Label@{Label}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{Label}{Label}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} \mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}}}
+
+
+
+objet permettant d\textquotesingle{}afficher du texte sur l\textquotesingle{}Application. 
+
+\begin{DoxyNote}{Note}
+Cette objet dérive de l\textquotesingle{}objet Render\+Object donc les fonctions liés à Render\+Object sont aussi valable pour l\textquotesingle{}objet Label et donc vous pouvez appeler des fonctions prenant en argument un Render\+Object$\ast$ en passant un Label$\ast$ à la place. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{RenderObjectWrapper_8h_ab1d2e715317f7ff49c0a22c7f871d325}{set\+Position}} 
+
+\mbox{\hyperlink{LabelWrapper_8h_a28185e6bd120924ac0b821dbb9bc7abc}{add\+New\+Label}} 
+
+\mbox{\hyperlink{ApplicationWrapper_8h_ac8f254439029299576dc04d961740820}{add\+\_\+\+Font}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{LabelWrapper_8h_a28185e6bd120924ac0b821dbb9bc7abc}\label{LabelWrapper_8h_a28185e6bd120924ac0b821dbb9bc7abc}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!addNewLabel@{addNewLabel}}
+\index{addNewLabel@{addNewLabel}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{addNewLabel()}{addNewLabel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}}$\ast$ add\+New\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{int}]{font\+ID,  }\item[{const char $\ast$}]{text,  }\item[{int}]{layer }\end{DoxyParamCaption})}
+
+
+
+un pointeur de fonction optionel pour set la fonction appelé juste avant le draw call 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{RenderObjectWrapper_8h_aa91d1c22004b096b8903d656d8fcc071}{set\+Before\+Drawing\+Function}}
+\end{DoxySeeAlso}
+création d\textquotesingle{}un nouveau Label qui sera automatiquement mis dans l\textquotesingle{}application passé en argument et donc rendu à l\textquotesingle{}écran.
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & l\textquotesingle{}application valide en question (!= NULL) \\
+\hline
+{\em font\+ID} & l\textquotesingle{}entier associé à la police d\textquotesingle{}écriture de manière unique. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_ac8f254439029299576dc04d961740820}{add\+\_\+\+Font}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em text} & le texte à afficher (en caractères ascii) \\
+\hline
+{\em layer} & la couche qui définit l\textquotesingle{}ordre de d\textquotesingle{}affichage, pour savoir à quel niveau afficher le Label \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{SFMLEvents_8h_a62713f71166a253cddfb1cb4e9810bf0}{Layers}} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+pointeur vers le Label créer. Sa libération de mémoire aura lieu lors de la destruction de l\textquotesingle{}application app. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{LabelWrapper_8h_ab95c7da49914dbcfc0a0c94d25e6bd3d}\label{LabelWrapper_8h_ab95c7da49914dbcfc0a0c94d25e6bd3d}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!appendLabelText@{appendLabelText}}
+\index{appendLabelText@{appendLabelText}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{appendLabelText()}{appendLabelText()}}
+{\footnotesize\ttfamily void append\+Label\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$}]{label,  }\item[{const char $\ast$}]{text\+To\+Add }\end{DoxyParamCaption})}
+
+
+
+ajoute la chaine de caractère {\itshape text\+To\+Add} à la fin du texte du Label 
+
+\begin{DoxyNote}{Note}
+cette fonction construit une nouvelle string avec le texte du label + text\+To\+Add
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em label} & (!=NULL) \\
+\hline
+{\em text\+To\+Add} & le texte à ajouter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{LabelWrapper_8h_a3b370753cd4d015b1f396d54567f4dbe}\label{LabelWrapper_8h_a3b370753cd4d015b1f396d54567f4dbe}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!canLabelBeDrawn@{canLabelBeDrawn}}
+\index{canLabelBeDrawn@{canLabelBeDrawn}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{canLabelBeDrawn()}{canLabelBeDrawn()}}
+{\footnotesize\ttfamily int can\+Label\+Be\+Drawn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+getter pour savoir si ce label peut être dessiner à l\textquotesingle{}écran ou pas 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{LabelWrapper_8h_abb1582ccd4e3787912a544642c289a31}{set\+Can\+Label\+Be\+Drawn}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em label} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 il peut, 0 il ne peut pas 
+\end{DoxyReturn}
+\mbox{\Hypertarget{LabelWrapper_8h_a66a91f38bb1dbd3b4d4f453e8ce22941}\label{LabelWrapper_8h_a66a91f38bb1dbd3b4d4f453e8ce22941}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!getCharacterSize@{getCharacterSize}}
+\index{getCharacterSize@{getCharacterSize}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getCharacterSize()}{getCharacterSize()}}
+{\footnotesize\ttfamily unsigned int get\+Character\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+getter pour la taille actuelle des caractères d\textquotesingle{}un Label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la taille des caractères du texte du Label 
+\end{DoxyReturn}
+\mbox{\Hypertarget{LabelWrapper_8h_a909eb5427b344299efd2214193aed0e5}\label{LabelWrapper_8h_a909eb5427b344299efd2214193aed0e5}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!getLabelBoundingBox@{getLabelBoundingBox}}
+\index{getLabelBoundingBox@{getLabelBoundingBox}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getLabelBoundingBox()}{getLabelBoundingBox()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structFloatRect}{Float\+Rect}} get\+Label\+Bounding\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+getter pour le rectangle englobant le Label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & le label en question \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le plus petit rectangle délimitant le texte du Label 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+get\+Float\+Rect 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{LabelWrapper_8h_aa0191250e103c1cbb918019fcd3c5763}\label{LabelWrapper_8h_aa0191250e103c1cbb918019fcd3c5763}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!getLabelText@{getLabelText}}
+\index{getLabelText@{getLabelText}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getLabelText()}{getLabelText()}}
+{\footnotesize\ttfamily const char$\ast$ get\+Label\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$}]{label }\end{DoxyParamCaption})}
+
+
+
+getter pour le texte du Label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le texte du Label 
+\end{DoxyReturn}
+\mbox{\Hypertarget{LabelWrapper_8h_abb1582ccd4e3787912a544642c289a31}\label{LabelWrapper_8h_abb1582ccd4e3787912a544642c289a31}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!setCanLabelBeDrawn@{setCanLabelBeDrawn}}
+\index{setCanLabelBeDrawn@{setCanLabelBeDrawn}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setCanLabelBeDrawn()}{setCanLabelBeDrawn()}}
+{\footnotesize\ttfamily void set\+Can\+Label\+Be\+Drawn (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$}]{label,  }\item[{int}]{flag }\end{DoxyParamCaption})}
+
+
+
+setter pour faire en sorte que le Label puisse être dessiner ou pas à l\textquotesingle{}écran 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & (!= NULL) \\
+\hline
+{\em flag} & 1 -\/$>$ il peut, 0 -\/$>$ il ne peut pas \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{LabelWrapper_8h_ade76ac12628c51469fa744be7c483311}\label{LabelWrapper_8h_ade76ac12628c51469fa744be7c483311}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!setCharacterSize@{setCharacterSize}}
+\index{setCharacterSize@{setCharacterSize}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setCharacterSize()}{setCharacterSize()}}
+{\footnotesize\ttfamily void set\+Character\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$}]{label,  }\item[{unsigned int}]{char\+Size }\end{DoxyParamCaption})}
+
+
+
+setter pour la taille des caractères du texte du Label (par défaut 20) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & (!= NULL) \\
+\hline
+{\em char\+Size} & la nouvelle taille de caractère \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{LabelWrapper_8h_a1023a70077d9049a7ffb7756b12b30db}\label{LabelWrapper_8h_a1023a70077d9049a7ffb7756b12b30db}} 
+\index{LabelWrapper.h@{LabelWrapper.h}!setLabelText@{setLabelText}}
+\index{setLabelText@{setLabelText}!LabelWrapper.h@{LabelWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setLabelText()}{setLabelText()}}
+{\footnotesize\ttfamily void set\+Label\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{LabelWrapper_8h_a9cdfbbd40ded5320bf8e95116d593fb0}{Label}} $\ast$}]{label,  }\item[{const char $\ast$}]{new\+\_\+text }\end{DoxyParamCaption})}
+
+
+
+setter pour le texte du Label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & (!= NULL) \\
+\hline
+{\em new\+\_\+text} & le nouveau texte à afficher \\
+\hline
+\end{DoxyParams}
