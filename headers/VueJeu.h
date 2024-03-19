@@ -12,7 +12,7 @@
 typedef struct VueJeu* VueJeu;
 
 typedef enum GamePhase{
-    PhaseEntrer, PhaseChoix1, PhaseChoixCarte, PhaseChoixProba, PhaseChoixZone, PhaseAppliqueEffet, PhaseEffet, PhaseFin
+    PhaseEntrer, PhaseRules, PhaseChoix1, PhaseChoixCarte, PhaseChoixProba, PhaseChoixZone, PhaseAppliqueEffet, PhaseEffet, PhaseFin
 } GamePhase;
 
 typedef enum Textures{
@@ -102,11 +102,15 @@ VueJeu creer_VueJeu(Application* app);
 
 void handleJeuEvent(Application* app, VueJeu vj, SFML_EVENTS e);
 
+void chgt_fond_regle(VueJeu vj);
+
 void updateJeu(Application* app, VueJeu vj, float dt);
 
 joueuse* getJoueuseCeTour_VueJeu(VueJeu vj);
 
 void setEffetChoisi_VueJeu(VueJeu vj, enum titre carte);
+
+char* regleDuJeu();
 
 
 
