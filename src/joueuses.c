@@ -28,14 +28,14 @@ struct joueuse {
 void creation_main_joueuse(joueuse *j1, Application* app){
 
   //creation du deck
-  int deck[17];
-  for (int i=1;i<=17;i++){
+  int deck[number_of_cards];
+  for (int i=1;i<=number_of_cards;i++){
     deck[i-1]=i;
   }
 
   //melange des cartes
-  for (int i = 0; i < 17; i++) {
-    int j = rand() % 17;
+  for (int i = 0; i < number_of_cards; i++) {
+    int j = rand() % number_of_cards;
     int temp = deck[i];
     deck[i] = deck[j];
     deck[j] = temp;

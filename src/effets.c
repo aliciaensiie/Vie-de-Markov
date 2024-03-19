@@ -22,7 +22,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Merabet : 
 
         setNom(Merabet,macarte);
-        setDesc( "Merabet : Pendant vos 3 prochains tours, votre capital augmente de 2." ,macarte) ;
+        setDesc( description(nom) ,macarte) ;
         setEtatCarte(INACTIVE ,macarte); 
         setNbTour(3,macarte);
         break;
@@ -30,7 +30,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Bannour : 
 
         setNom(Bannour ,macarte) ;
-        setDesc( "Bannour : Choisissez deux zones, les personnages présents sur ces deux zones sont échangés.",macarte) ;
+        setDesc( description(nom) ,macarte) ;
         setEtatCarte(INACTIVE,macarte) ; 
         setNbTour(0,macarte);
         break;
@@ -38,7 +38,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Honore : 
 
         setNom(Honore,macarte);
-        setDesc("Honore : Chaque monstre se déplace 3 fois. Chaque membre d école qu un monstre rencontre est mangé.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte(INACTIVE,macarte) ; 
         setNbTour(0,macarte);
         break;
@@ -46,7 +46,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Goilard :
 
         setNom( Goilard ,macarte) ;
-        setDesc("Goilard : Lors du prochain tour et du suivant, c est vous qui jouez. Lors des deux tours suivant, c'est la joueuse adverse qui joue.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte( INACTIVE,macarte) ;  
         setNbTour(4,macarte) ;
         break;
@@ -54,7 +54,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Bourard :
 
         setNom(Bourard,macarte)  ;
-        setDesc("Bourard : Lors du prochain déplacement, si deux membres d écoles adverses se retrouvent sur la même zone, ils se déplacent de nouveau. Si ces deux membres sont sur la zone du monstre avant le second déplacement, ils ne sont pas mangés. On recommence l'opération au plus 100 fois, jusqu'à ce que les membres des écoles adverses soient sur des zones distinctes.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte(INACTIVE,macarte)  ; 
         setNbTour(2,macarte);
         break;
@@ -62,7 +62,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Munante :
 
         setNom( Munante,macarte) ;
-        setDesc("Munante : Les membres d écoles présents sur la zone où était un monstre avant son dernier déplacement sont mangés.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte( INACTIVE,macarte) ; 
         setNbTour(0,macarte);
         break;
@@ -70,7 +70,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Benezet : 
 
         setNom(Benezet,macarte)  ;
-        setDesc("Benezet : Déplacez un des monstres sur la zone de votre choix. Si un membre d école se trouve sur la zone du monstre, il n est pas mangé.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte( INACTIVE,macarte) ;  
         setNbTour(0,macarte) ;
         break;
@@ -79,7 +79,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Ligozat :
 
         setNom(Ligozat,macarte)  ;
-        setDesc( "Ligozat : Choisissez un membre de votre école, il effectue désormais deux déplacements au lieu d un à chaque tour.",macarte) ;
+        setDesc( description(nom),macarte) ;
         setEtatCarte(INACTIVE,macarte)  ;  
         setNbTour(-1,macarte) ;
         break;
@@ -87,7 +87,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Mouilleron :
 
         setNom(Mouilleron,macarte)  ;
-        setDesc( "Mouilleron : Choisissez un membre de l école de la joueuse adverse. Ce membre devient un membre de votre école.",macarte) ;
+        setDesc( description(nom),macarte) ;
         setEtatCarte( INACTIVE,macarte) ; 
         setNbTour(-1,macarte) ;
         break;
@@ -95,7 +95,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)DembeleCabot :
 
         setNom( DembeleCabot,macarte) ;
-        setDesc("DembeleCabot : Sacrifiez un membre de votre école de votre choix. Vous avez 15 points de capital en plus à votre prochain tour.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte(INACTIVE,macarte)  ; 
         setNbTour(1,macarte) ;
         break;
@@ -103,7 +103,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Huet :
 
         setNom( Huet,macarte) ;
-        setDesc("Huet : Chaque zone effectue une rotation de probabilité. La probabilité d aller de la zone i à la zone j devient la probabilité d'aller de la zone i à la zone j + 1. La probabilité d'aller de la zone i à la zone 10 devient la probabilité d'aller de la zone i à la zone 1.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte(INACTIVE,macarte)  ; 
         setNbTour(0,macarte) ;
         break;
@@ -112,7 +112,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Matias :
 
         setNom(Matias,macarte)  ;
-        setDesc("Matias : Chaque monstre disparaît pendant 2 tours. Il réapparaîtra sur la zone d où il est parti.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte( INACTIVE,macarte) ; 
         setNbTour( 2,macarte);
         break;
@@ -120,7 +120,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)PulidoNino :
 
         setNom(PulidoNino,macarte)  ;
-        setDesc("PulidoNino : Mettez à 0 les probabilités permettant de sortir de la zone de chaque monstre et mettez à 1 la probabilité de rester dans la zone de chaque monstre.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte(INACTIVE,macarte)  ; 
         setNbTour(0,macarte) ;
         break;
@@ -128,7 +128,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Watel : 
 
         setNom(Watel,macarte)  ;
-        setDesc( "Watel : Choisissez un membre de votre école, il devient FISA et effectue désormais son déplacement un tour sur deux.",macarte) ;
+        setDesc( description(nom),macarte) ;
         setEtatCarte(INACTIVE,macarte)  ; 
         setNbTour(-1,macarte) ;
         break;
@@ -136,14 +136,14 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Szafranski:
 
         setNom(Szafranski,macarte)  ;
-        setDesc("Szafranski : un monstre sera ajouté sur la zone 1, un membre de votre école sera ajouté sur la zone 2 et un membre de l école adverse sera ajouté sur la zone 3. Si un membre d école se trouve sur la même zone qu'un monstre, il n'est pas mangé.",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte(INACTIVE,macarte)  ; 
         setNbTour(0,macarte) ;
         break;
         case (int)Forest :
 
         setNom(Forest,macarte)  ;
-        setDesc("Forest : Mettez toutes les probabilités à 0. Puis, pour chaque zone, la probabilité de se déplacer de cette zone vers la zone contenant le monstre passe à 0.5 (si il y a plusieurs monstres, un des monstres est choisi aléatoirement) ; et la probabilité de se déplacer de cette zone vers une autre zone ne contenant pas de monstre choisie aléatoirement passe également à 0.5",macarte)  ;
+        setDesc(description(nom),macarte)  ;
         setEtatCarte(INACTIVE,macarte)  ;  
         setNbTour(0,macarte) ;
         break;
@@ -151,7 +151,7 @@ void initialisation_carte(int nom, carte* macarte){
         case (int)Prevel :
 
         setNom(Prevel,macarte)  ;
-        setDesc( "Prevel : Pendant 4 tours, les membres de votre école ne peuvent être mangés par un monstre. Si ils sont sur sa zone à la fin du tour, rien ne se passe, ils restent sur cette case.",macarte) ;
+        setDesc( description(nom),macarte) ;
         setEtatCarte(INACTIVE,macarte)  ; 
         setNbTour(5,macarte) ;
         break;
@@ -817,4 +817,194 @@ int activate_carte(joueuse* joueuse_ce_tour, joueuse* monstre){
         main=getCarteSuivante(main);
     }
     return i; 
+}
+
+char* description(int nom){
+    switch (nom) {
+
+        case (int)Merabet : 
+            return "Pendant vos 3 prochains tours, votre capital augmente de 2.";
+            break;
+
+        case (int)Bannour : 
+            return "Choisissez deux zones, les personnages presents sur ces deux zones sont echanges.";
+            break;
+
+        case (int)Honore : 
+            return "Chaque monstre se deplace 3 fois. Chaque membre d ecole qu un monstre rencontre est mange."  ;
+            break;
+
+        case (int)Goilard :
+            return "Lors du prochain tour et du suivant, c est vous qui jouez. Lors des deux tours suivant, c'est la joueuse adverse qui joue.";
+            break;
+
+        case (int)Bourard :
+            return "Les membres bougent jusqu'a ce que les membres des ecoles adverses soient sur des zones distinctes.";
+            break;
+
+        case (int)Munante :
+            return "Les membres d ecoles presents sur la zone ou etait un monstre avant son dernier deplacement sont manges.";
+            break;
+
+        case (int)Benezet : 
+            return "Deplacez un des monstres sur la zone de votre choix. Si un membre d ecole se trouve sur la zone du monstre, il n est pas mange.";
+            break;
+
+        case (int)Ligozat :
+            return "Choisissez un membre de votre ecole, il effectue desormais deux deplacements au lieu d un a chaque tour.";
+            break;
+
+        case (int)Mouilleron :
+            return "Choisissez un membre de l ecole de la joueuse adverse. Ce membre devient un membre de votre ecole.";
+            break;
+
+        case (int)DembeleCabot :
+            return "Sacrifiez un membre de votre ecole de votre choix. Vous avez 15 points de capital en plus a votre prochain tour.";
+            break;
+
+        case (int)Huet :
+            return "Chaque zone effectue une rotation de probabilite.";
+            break;
+    
+
+        case (int)Matias :
+            return "Chaque monstre disparait pendant 2 tours. Il reapparaitra sur la zone d ou il est parti.";
+            break;
+
+        case (int)PulidoNino :
+            return "Les probabilites de sortir de la zone de/des monstre(s) sont mises a 0 et la probabilite de rester dans cette/ces zone(s) est mise a 1.";
+            break;
+
+        case (int)Watel : 
+            return "Choisissez un membre de votre ecole, il devient FISA et effectue desormais son deplacement un tour sur deux.";
+            break;
+
+        case (int)Szafranski:
+            return "Il sera ajoute: un monstre sur la zone 1, un membre de votre ecole sur la zone 2 et un membre de l ecole adverse sur la zone 3.\nIls ne peuvent pas etre manges.";
+            break;
+
+        case (int)Forest :
+            return "Pour chaque zone, les probabilites d'aller vers la zone du/d'un des monstre(s) et une autre zone choisie aleatoirement passent a 0.5;\nles autres sont mises a 0.";
+            break;
+
+        case (int)Prevel :
+            return "Pendant 4 tours, les membres de votre ecole ne peuvent etre manges par un monstre.";
+            break;
+
+        default :
+            break;
+
+    }
+}
+
+char* name(int nom){
+    switch (nom) {
+
+        case (int)Merabet : 
+            return "Merabet : ";
+            break;
+
+        case (int)Bannour : 
+            return "Bannour : ";
+            break;
+
+        case (int)Honore : 
+            return "Honore : "  ;
+            break;
+
+        case (int)Goilard :
+            return "Goilard : ";
+            break;
+
+        case (int)Bourard :
+            return "Bourard : ";
+            break;
+
+        case (int)Munante :
+            return "Munante : ";
+            break;
+
+        case (int)Benezet : 
+            return "Benezet : ";
+            break;
+
+        case (int)Ligozat :
+            return "Ligozat : ";
+            break;
+
+        case (int)Mouilleron :
+            return "Mouilleron : ";
+            break;
+
+        case (int)DembeleCabot :
+            return "DembeleCabot : ";
+            break;
+
+        case (int)Huet :
+            return "Huet : ";
+            break;
+    
+
+        case (int)Matias :
+            return "Matias : ";
+            break;
+
+        case (int)PulidoNino :
+            return "PulidoNino : ";
+            break;
+
+        case (int)Watel : 
+            return "Watel : ";
+            break;
+
+        case (int)Szafranski:
+            return "Szafranski : ";
+            break;
+
+        case (int)Forest :
+            return "Forest : ";
+            break;
+
+        case (int)Prevel :
+            return "Prevel : ";
+            break;
+
+        default :
+            break;
+
+    }
+}
+
+
+Label** create_desc_effect(Application* app){
+    Label** list_label = malloc( number_of_cards*2* sizeof(Label*));
+    for( int i=1; i<number_of_cards+1;  i++){
+
+        Label* nom = addNewLabel(app, DESC_BOLD_FONT, name(i), ForeGround );
+        setPosition(nom, 10, (i-1)*(HEIGHT/number_of_cards));
+        setCharacterSize(nom, 15);
+        setSpriteColor(nom, 0,0,0,255);
+        setCanLabelBeDrawn(nom, 0);
+        list_label[2*number_of_cards - i]= nom;
+
+        Label* label = addNewLabel(app, DESC_FONT, description(i), ForeGround);
+        setPosition(label, 130, (i-1)*(HEIGHT/number_of_cards) );
+        setCharacterSize(label, 15);
+        setSpriteColor(label, 0,0,0,255);
+        setCanLabelBeDrawn(label, 0);
+        list_label[i-1]= label;
+    }
+    return list_label;
+}
+
+void print_desc_effect(Label** list_label){
+    for (int i=0; i<number_of_cards*2; i++){
+        setCanLabelBeDrawn(list_label[i], 1);
+    }
+}
+
+void remove_desc_effect(Label** list_label){
+    for (int i=0; i<number_of_cards*2; i++){
+        setCanLabelBeDrawn(list_label[i], 0);
+    }
 }

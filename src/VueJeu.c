@@ -21,8 +21,9 @@ struct VueJeu{
     map* la_map;
     Application* app;
     RenderObject* fond_generale;
-    Label* fWinnerLabel; 
-    RenderObject* EffectDescription;
+    Label* fWinnerLabel;
+    RenderObject* fond_desc; 
+    Label** list_desc_effect;
     Label* tourjoueuse;
     Label* choixzone;
     RenderObject* carte_ou_proba;
@@ -133,7 +134,8 @@ VueJeu creer_VueJeu(Application* app){
     vj->joueuses[3]=NULL;
     vj->la_map=NULL;
     vj->fWinnerLabel=NULL;
-    vj->EffectDescription=NULL;
+    vj->fond_desc = NULL;
+    vj->list_desc_effect = malloc(number_of_cards *2 * sizeof(Label*));
     vj->tourjoueuse=NULL;
     vj->fKeyToPressed=NULL;
     vj->carte_ou_proba=NULL;
@@ -184,9 +186,10 @@ void initializeVueJeu(VueJeu vj){
     //creation du fond 
     vj->fond_generale=addNewRenderObject(vj->app, Fond_Jeu, getFloatRect(0, 0, 0, 0), Background);
 
-    //creation fond effet carte
-    vj->EffectDescription=addNewRenderObject(vj->app, Effet_Carte, getFloatRect(0, 0, 0, 0), ForeGround);
-    setCanRenderObjectBeDrawn(vj->EffectDescription, 0);
+    //creation description
+    vj->fond_desc=addNewRenderObject(vj->app, Fond_Desc, getFloatRect(0, 0, 0, 0), ForeGround);
+    setCanRenderObjectBeDrawn(vj->fond_desc, 0);
+    vj->list_desc_effect = create_desc_effect(vj->app);
 
     // label tour de joueuse
     vj->tourjoueuse=addNewLabel(vj->app, SANSATION_FONT, "C'est au tour de J1, \nCapital = 5", ForeGround);
@@ -226,7 +229,8 @@ void chgt_fond_label_effect(VueJeu vj){
             setCanRenderObjectBeDrawn(vj->choix_proba, 0);
         }
         setCanRenderObjectBeDrawn(vj->fond_generale, 0);
-        setCanRenderObjectBeDrawn(vj->EffectDescription, 1);
+        setCanRenderObjectBeDrawn(vj->fond_desc, 1);
+        print_desc_effect(vj->list_desc_effect);
         setLabelText(vj->fKeyToPressed, "Press E to return in the game");
         setSpriteColor(vj->fKeyToPressed, 0,0,0,255);
         vj->beforeInfoMenuPhase = vj->phaseactuelle;
@@ -241,7 +245,8 @@ void chgt_fond_label_effect(VueJeu vj){
             setCanRenderObjectBeDrawn(vj->choix_proba, 1);
         }
         setCanRenderObjectBeDrawn(vj->fond_generale, 1);
-        setCanRenderObjectBeDrawn(vj->EffectDescription, 0);
+        setCanRenderObjectBeDrawn(vj->fond_desc, 0);
+        remove_desc_effect(vj->list_desc_effect);
         setLabelText(vj->fKeyToPressed, "Press E for effects information");
         setSpriteColor(vj->fKeyToPressed, 255,255,255,255);
         vj->phaseactuelle=vj->beforeInfoMenuPhase;

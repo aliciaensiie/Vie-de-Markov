@@ -3,6 +3,7 @@
 
 #include "cartes.h"
 #include "joueuses.h"
+#include "LabelWrapper.h"
 
 typedef struct Application Application;
 /**
@@ -30,5 +31,12 @@ int activate_carte(joueuse* joueuse1, joueuse* monstre);
  * \param num_carte:  numero de la carte à jouer
 */
 int jouer_une_carte(joueuse* joueuse1, joueuse* joueuse2, joueuse* monstre, int numero, map* la_map, int num_carte,int zone1,int zone2,Application *app);
+
+char* description(int nom);
+char* name(int nom);
+
+Label** create_desc_effect(Application* app);
+void print_desc_effect(Label** list_label);
+void remove_desc_effect(Label** list_label);
 
 #endif

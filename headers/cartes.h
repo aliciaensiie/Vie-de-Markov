@@ -11,6 +11,7 @@ typedef struct RenderObject RenderObject;
 #define debut_carte_hauteur 755
 #define espace_carte 55
 #define taille_carte 100
+#define number_of_cards 17
 
 enum titre {
     Merabet = 1, /*Pendant vos 3 prochains tour, votre capital augmente de 2*/
@@ -57,6 +58,10 @@ enum titre {
     Prevel, /*Pendant 4 tours, les membres de votre école ne peuvent être mangés par un monstre. 
     S'ils sont sur sa zone à la fin du tour, rien ne se passe, ils restent sur cette case.*/
 };
+
+
+
+
 enum etat_carte {
   INACTIVE,
   ACTIVE,

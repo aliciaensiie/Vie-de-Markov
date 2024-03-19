@@ -13,9 +13,6 @@
 #include "ViewWrapper.h"
 #include "AnimationWrapper.h"
 
-#define WIDTH 1200
-#define HEIGHT 900
-
 
 int main()
 {
@@ -45,7 +42,6 @@ int main()
     add_Texture(app, "Ressources/Texture/prevel_bleu.png", Preveltex); 
     add_Texture(app, "Ressources/Texture/press-start.png", Fond_Generale_debut); 
     add_Texture(app, "Ressources/Texture/fond_jeu.png", Fond_Jeu);
-    add_Texture(app, "Ressources/Texture/effet.png", Effet_Carte);
     add_Texture(app, "Ressources/Texture/Choix.png", Carte_ou_proba);  
     add_Texture(app, "Ressources/Texture/choix_carte.png", Choix_Carte); 
     add_Texture(app, "Ressources/Texture/choix_proba.png", Choix_proba); 
@@ -55,8 +51,11 @@ int main()
     add_Texture(app, "Ressources/Texture/monstre.png", Perso_monstre); 
     add_Texture(app, "Ressources/Texture/zones.png", Plateau); 
     add_Texture(app, "Ressources/Texture/matrice.png", matrice);
-
+    add_Texture(app, "Ressources/Texture/fond_desc.png", Fond_Desc);
+    
     add_Font(app, "Ressources/Font/Gameplay.ttf", SANSATION_FONT);
+    add_Font(app, "Ressources/Font/desc.ttf", DESC_FONT);
+    add_Font(app, "Ressources/Font/desc_bold.ttf", DESC_BOLD_FONT);
 
     // Création du plateau de jeu
 
