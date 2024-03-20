@@ -52,6 +52,8 @@ int main()
     add_Texture(app, "Ressources/Texture/zones.png", Plateau); 
     add_Texture(app, "Ressources/Texture/matrice.png", matrice);
     add_Texture(app, "Ressources/Texture/fond_desc.png", Fond_Desc);
+    add_Texture(app, "Ressources/Texture/fond_desc.png", Fond_Rules);
+
     
     add_Font(app, "Ressources/Font/Gameplay.ttf", SANSATION_FONT);
     add_Font(app, "Ressources/Font/desc.ttf", DESC_FONT);

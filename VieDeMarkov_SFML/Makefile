@@ -16,11 +16,11 @@ PROJET_O=VueJeu.o structures.o cartes.o zones.o joueuses.o personnages.o effets.
 #nom de l'éxécutable
 TARGET=jeu
 #pour inclure la librairie statique dans la compilation
-LIB=./CSFML/lib
+LIB=../CSFML/lib
 #pour in clude la librairie sfml dans la compilation
-LIBSFML=./CSFML/SFML-2.5.1/lib
+LIBSFML=../CSFML/SFML-2.5.1/lib
 #pour pouvoir faire des #include "ApplicationWrapper.h" par exemple
-INCLUDE=./CSFML/include/
+INCLUDE=../CSFML/include/
 #compilateur C
 CC=gcc
 #linker C++

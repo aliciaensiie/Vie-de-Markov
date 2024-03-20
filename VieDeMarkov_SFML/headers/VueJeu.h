@@ -16,7 +16,7 @@ typedef enum GamePhase{
 } GamePhase;
 
 typedef enum Textures{
-    Merabettex=1, Bannourtex, Honoretex, Goilardtex, Bourardtex, Munantetex, Benezettex, Ligozattex, Mouillerontex, Dembeletex, Huettex, Matiastex, Pulidotex, Wateltex, Szafranskitex, Foresttex, Preveltex, Fond_Generale_debut, Fond_Jeu, Carte_ou_proba, Choix_Carte, Choix_proba, TextureFin, Perso_j1, Perso_j2, Perso_monstre, Plateau, matrice, Fond_Desc
+    Merabettex=1, Bannourtex, Honoretex, Goilardtex, Bourardtex, Munantetex, Benezettex, Ligozattex, Mouillerontex, Dembeletex, Huettex, Matiastex, Pulidotex, Wateltex, Szafranskitex, Foresttex, Preveltex, Fond_Generale_debut, Fond_Jeu, Carte_ou_proba, Choix_Carte, Choix_proba, TextureFin, Perso_j1, Perso_j2, Perso_monstre, Plateau, matrice, Fond_Desc, Fond_Rules
 } Textures; 
 
 typedef enum Fonts{

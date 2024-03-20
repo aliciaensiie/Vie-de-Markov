@@ -30,6 +30,7 @@ struct VueJeu{
     Label* fWinnerLabel;
 
     RenderObject* fond_desc; 
+    RenderObject* fond_rules;
     Label** list_desc_effect;
 
     Label* tourjoueuse;
@@ -143,6 +144,7 @@ VueJeu creer_VueJeu(Application* app){
     vj->la_map=NULL;
     vj->fWinnerLabel=NULL;
     vj->fond_desc = NULL;
+    vj->fond_rules = NULL;
     vj->list_desc_effect = malloc(number_of_cards *2 * sizeof(Label*));
     vj->tourjoueuse=NULL;
     vj->fKeyToPressed=NULL;
@@ -160,18 +162,20 @@ VueJeu creer_VueJeu(Application* app){
     //creation du fond 
     vj->fond_generale=addNewRenderObject(app, Fond_Generale_debut, getFloatRect(0, 0, 0, 0), Background);
 
-    vj->question_regle=addNewLabel(app, SANSATION_FONT, "Press E for the game rules", ForeGround);
-    setPosition(vj->question_regle, 15, 870);
-    setCharacterSize(vj->question_regle, 20);
+    
 
-    vj->fond_desc=addNewRenderObject(vj->app, Fond_Desc, getFloatRect(0, 0, 0, 0), ForeGround);
-    setCanRenderObjectBeDrawn(vj->fond_desc, 0);
+    vj->fond_rules=addNewRenderObject(vj->app, Fond_Rules, getFloatRect(0, 0, 0, 0), ForeGround);
+    setCanRenderObjectBeDrawn(vj->fond_rules, 0);
 
     vj->regle = addNewLabel(app, DESC_BOLD_FONT, regleDuJeu(), ForeGround);
     setCanLabelBeDrawn(vj->regle, 0);
     setPosition(vj->regle, 20, 20);
     setSpriteColor(vj->regle, 0,0,0,255);
     setCharacterSize(vj->regle, 20);
+
+    vj->question_regle=addNewLabel(app, SANSATION_FONT, "Press E for the game rules", ForeGround);
+    setPosition(vj->question_regle, 15, 870);
+    setCharacterSize(vj->question_regle, 20);
     
     vj->phaseactuelle = PhaseEntrer;
     vj->fEndGameAccu = 0.f;
@@ -204,6 +208,9 @@ void initializeVueJeu(VueJeu vj){
 
     //creation du fond 
     vj->fond_generale=addNewRenderObject(vj->app, Fond_Jeu, getFloatRect(0, 0, 0, 0), Background);
+
+    vj->fond_desc=addNewRenderObject(vj->app, Fond_Desc, getFloatRect(0, 0, 0, 0), ForeGround);
+    setCanRenderObjectBeDrawn(vj->fond_desc, 0);
 
     //creation description
     vj->list_desc_effect = create_desc_effect(vj->app);
@@ -276,12 +283,17 @@ void chgt_fond_label_effect(VueJeu vj){
 void chgt_fond_regle(VueJeu vj){
     if (vj->phaseactuelle == PhaseEntrer ){
         vj->phaseactuelle = PhaseRules;
-        setCanRenderObjectBeDrawn(vj->fond_desc, 1);
+        setLabelText(vj->question_regle, "Press E to return in the game");
+        setSpriteColor(vj->question_regle, 0,0,0,255);
+        setCanRenderObjectBeDrawn(vj->fond_rules, 1);
         setCanLabelBeDrawn(vj->regle, 1);
+        
     }
     else{
         vj->phaseactuelle = PhaseEntrer;
-        setCanRenderObjectBeDrawn(vj->fond_desc, 0);
+        setLabelText(vj->question_regle, "Press E for the game rules");
+        setSpriteColor(vj->question_regle, 255,255,255,255);
+        setCanRenderObjectBeDrawn(vj->fond_rules, 0);
         setCanLabelBeDrawn(vj->regle, 0);
     }
 }
@@ -471,7 +483,7 @@ void handleJeuEvent(Application* app, VueJeu vj, SFML_EVENTS e)
 }
 
 char* regleDuJeu(){
-    char* regle= "Regle Du Jeu:\n\nLa Vie de Markov est un jeu ou s'affrontent 2 joueuses qui doivent effectuer differents choix \npour que les membres de leur ecole survivent.\n\nAu debut d'une partie, les 2 joueuses possedent 5 personnages(des membres) et 5 cartes :\n- les personnages de la joueuse 1 sont representes par des X\n- les personnages de la joueuse 2 sont repesentees par des O\n- les monstres sont representes par la lettre M\n\nA chaque tour, il vous sera d'abord demande de choisir si vous voulez jouer une carte et si oui \nlaquelle. Sinon, vous possedez a chaque debut de tour 5 points de capital, vous devez alors choisir \ncombien vous souhaitez en utilise en tout. Il vous est par la suite possible de decouper l'utilisation \nde ce capital en plusieurs actions. Ces points de capital vous permettent de modifier la probabilite \nde se deplacer d'une case a une autre. Pour 1 point de capital, la probabilite sera change de 0.1.\n\nLorsqu'une personne a joue, la carte choisie ou les probabilites changees s'appliquent et les personnes \net le/les monstre(s) bougent. Les personnes se trouvant sur la meme case qu'un monstre sont manges. \nLe jeu s'arrete lorsque qu'un joueur n'a plus de personnage.";
+    char* regle= "Regle Du Jeu:\n\nLa Vie de Markov est un jeu ou s'affrontent 2 joueuses qui doivent effectuer differents choix \npour que les membres de leur ecole survivent.\n\nAu debut d'une partie, les 2 joueuses possedent 5 personnages(des membres) et 5 cartes :\n- les personnages de la joueuse 1 sont representes par des X\n- les personnages de la joueuse 2 sont repesentees par des O\n- les monstres sont representes par la lettre M\n\nA chaque tour, il vous sera d'abord demande de choisir si vous voulez jouer une carte et si oui \nlaquelle. Sinon, vous possedez a chaque debut de tour 5 points de capital, vous devez alors choisir \ncombien vous souhaitez en utilise en tout. Il vous est par la suite possible de decouper l'utilisation \nde ce capital en plusieurs actions. Ces points de capital vous permettent de modifier la probabilite \nde se deplacer d'une case a une autre. Pour 1 point de capital, la probabilite sera change de 0.1.\n\nEtape pour changer la probabilite :\n1. Choisir le nombre capital que tu souhaites utiliser\n2. Choisir la zone 1 a partir de laquelle les probabilites changent\n3. Choisir une zone 2 afin que la probabilite d'aller de la zone 1 vers la zone 2 augmente \n4. Choisir une zone 3 afin que la probabilite d'aller de la zone 1 vers la zone 3 diminue\n\nLorsqu'une personne a joue, la carte choisie ou les probabilites changees s'appliquent et les personnes \net le/les monstre(s) bougent. Les personnes se trouvant sur la meme case qu'un monstre sont manges. \nLe jeu s'arrete lorsque qu'un joueur n'a plus de personnage.";
     return regle;
 }
 

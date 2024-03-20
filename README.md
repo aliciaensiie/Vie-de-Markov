@@ -61,3 +61,5 @@ Au début d'une partie, les 2 joueuses possèdent 5 personnages(des membres) et 
 Il vous sera d'abord demandé de choisir si vous voulez jouer une carte et si oui laquelle. Sinon, vous possedez à chaque début de tour 5points de capital, vous devez alors choisir combien vous souhaitez en utilisé en tout. Il vous est par la suite possible de découper l'utilisation de ce capital en plusieurs actions. Ces points de capital vous permettent de modifier la probabilite de se déplacer d'une case à une autre. Pour 1 point de capital, la probabilité sera change de 0.1. 
 
 Lorsqu'une personne a joué, la carte choisie ou les probabilités changées s'appliquent et les personnes et le/les monstre(s) bougent. Les personnes se trouvant sur la meme case qu'un monstre sont mangés. Le jeu s'arrete lorsque qu'un joueur n'a plus de personnage. 
+
+\nEtape pour changer la probabilite:\n1.Choisir le nombre capital que tu souhaites utiliser\n2.Choisir la zone 1 a partir de laquelle les probabilites changent\n3Choisir une zone 2 afin que la probabilite d'aller de la zone 1 vers la zone 2 augmente \n4.Choisir une zone 3 afin que la probabilite d'aller de la zone 1 vers la zone 3 diminue 
