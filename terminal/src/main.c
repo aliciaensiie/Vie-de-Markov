@@ -9,6 +9,35 @@
 #include <stdio.h>
 #include <time.h>
 
+
+#include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+
+#define FIFO_FILE "/tmp/my_fifo"
+
+void rules() {
+    // Créer le tube nommé ("named pipe")
+    mkfifo(FIFO_FILE, 0666);
+
+    //open a new terminal, wrote the contents of my_fifo in there and wait for user to write something and press ENTER.
+    system("gnome-terminal --geometry=125x30 -- bash -c 'cat /tmp/my_fifo; read'");
+
+
+    // Écrire dans le tube nommé
+    int fd = open(FIFO_FILE, O_WRONLY);
+    if (fd == -1) {
+        perror("Failed to open FIFO");
+    }
+    char message[] = "\033[36;01mRegle Du Jeu:\033[00m\n\nLa Vie de Markov est un jeu ou s'affrontent 2 joueuses qui doivent effectuer differents choix \npour que les membres de leur ecole survivent.\n\nAu debut d'une partie, les 2 joueuses possedent 5 personnages(des membres) et 5 cartes :\n- les personnages de la joueuse 1 sont representes par des X\n- les personnages de la joueuse 2 sont repesentees par des O\n- les monstres sont representes par la lettre M\n\nA chaque tour, il vous sera d'abord demande de choisir si vous voulez jouer une carte et si oui \nlaquelle. Sinon, vous possedez a chaque debut de tour 5 points de capital, vous devez alors choisir \ncombien vous souhaitez en utilise en tout. Il vous est par la suite possible de decouper l'utilisation \nde ce capital en plusieurs actions. Ces points de capital vous permettent de modifier la probabilite \nde se deplacer d'une case a une autre. Pour 1 point de capital, la probabilite sera change de 0.1.\n\nEtape pour changer la probabilite :\n1. Choisir le nombre capital que tu souhaites utiliser\n2. Choisir la zone 1 a partir de laquelle les probabilites changent\n3. Choisir une zone 2 afin que la probabilite d'aller de la zone 1 vers la zone 2 augmente \n4. Choisir une zone 3 afin que la probabilite d'aller de la zone 1 vers la zone 3 diminue\n\nLorsqu'une personne a joue, la carte choisie ou les probabilites changees s'appliquent et les personnes \net le/les monstre(s) bougent. Les personnes se trouvant sur la meme case qu'un monstre sont manges. \nLe jeu s'arrete lorsque qu'un joueur n'a plus de personnage.\n\n\n\033[36;01mPress ENTER to close this terminal\033[00m\n";
+    write(fd, message, sizeof(message));
+
+    close(fd);
+    unlink(FIFO_FILE); // Supprimer le tube nommé après utilisation
+}
+
+
 int main(){
     srand(time(NULL));
     /* Creation zone , personnages et joueuses*/
@@ -19,6 +48,8 @@ int main(){
 
     /*fonction d'affichage début de jeu*/
     lancement_jeu(); 
+
+    rules();
 
     /* Creation des variables */
     int carte_ou_pas; 
