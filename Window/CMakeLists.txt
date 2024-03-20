@@ -28,9 +28,11 @@ endif()
 #compile option and definition macro path to ressource
 if(UNIX)
 	target_compile_options(schoolBattle PUBLIC -Wall -Wextra -std=c99 -g)
-	target_compile_definitions(schoolBattle PUBLIC PATH_RESSOURCES="/usr/share/schoolBattle/ressources")
+	target_compile_definitions(schoolBattle PUBLIC PATH_RESSOURCES="/usr/share/schoolBattle/Ressources")
+	target_compile_definitions(schoolBattle PUBLIC SIZE_PATH_RESSOURCES=35)
 elseif(WIN32)
-	target_compile_definitions(schoolBattle PUBLIC PATH_RESSOURCES="./ressources")
+	target_compile_definitions(schoolBattle PUBLIC PATH_RESSOURCES="./Ressources")
+	target_compile_definitions(schoolBattle PUBLIC SIZE_PATH_RESSOURCES=13)
 endif()
 
 #link libraries
@@ -48,7 +50,7 @@ elseif (WIN32)
 endif()
 
 #cpack package
-set(CPACK_PACKAGE_NAME "The School Battle")
+set(CPACK_PACKAGE_NAME "schoolBattle")
 set(CPACK_PACKAGE_VERSION "1.0.0")  
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "2 players needed")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Arry")
@@ -62,12 +64,12 @@ set(CPACK_NSIS_MUI_ICON "${CMAKE_CURRENT_SOURCE_DIR}/Ressources/Texture/school-b
 
 
 #sfml library
-if(UNIX)
-	set(CPACK_DEBIAN_PACKAGE_DEPENDS "libsfml-graphics2.5")
-elseif (WIN32)
-	file(GLOB SFML_DLL "${SFML_PATH}/bin/*.dll")
-	install(FILES ${SFML_DLL} DESTINATION bin)
-endif()
+#if(UNIX)
+#	set(CPACK_DEBIAN_PACKAGE_DEPENDS "libsfml-graphics2.5")
+#elseif (WIN32)
+#	file(GLOB SFML_DLL "${SFML_PATH}/bin/*.dll")
+#	install(FILES ${SFML_DLL} DESTINATION bin)
+#endif()
 
 #dll window
 if(WIN32)

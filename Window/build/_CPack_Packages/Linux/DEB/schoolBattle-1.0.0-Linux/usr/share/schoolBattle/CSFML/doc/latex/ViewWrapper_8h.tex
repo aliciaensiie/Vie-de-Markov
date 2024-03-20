@@ -1,0 +1,271 @@
+\hypertarget{ViewWrapper_8h}{}\doxysection{View\+Wrapper.\+h File Reference}
+\label{ViewWrapper_8h}\index{ViewWrapper.h@{ViewWrapper.h}}
+
+
+petit wrapper pour l\textquotesingle{}objet sf\+::\+View  
+
+
+{\ttfamily \#include \char`\"{}Utility.\+h\char`\"{}}\newline
+Include dependency graph for View\+Wrapper.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{ViewWrapper_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct View \mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}}
+\begin{DoxyCompactList}\small\item\em Une vue (View) est un rectangle d\textquotesingle{}affichage correspondant à la scène de la fenêtre d\textquotesingle{}affichage, c\textquotesingle{}est la caméra du monde qu\textquotesingle{}affiche l\textquotesingle{}Application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$ \mbox{\hyperlink{ViewWrapper_8h_aef2436f172844b7f6f2850c9b45d5d7f}{create\+View}} (struct \mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, int id)
+\begin{DoxyCompactList}\small\item\em construit une View sur le tas, en utilisant la vue par défaut de la fenêtre d\textquotesingle{}Application, et en l\textquotesingle{}ajoute directement à l\textquotesingle{}application (donc pas besoin de free côté utilisateur) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}} (\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$view, float width, float height)
+\begin{DoxyCompactList}\small\item\em setters pour la taille de la vue de la fenêtre une vue est un rectangle correspondant à la partie visible du monde, par défaut la taille est celle du target (de la fenêtre) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVector2f}{Vector2f}} \mbox{\hyperlink{ViewWrapper_8h_aac78d9f0ccddb507f4af277cf31c6858}{get\+View\+Size}} (\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$view)
+\begin{DoxyCompactList}\small\item\em getter pour la taille de la vue \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ViewWrapper_8h_a3641e2d5cf5a2306afd9ddd49cc8b2e3}{set\+Viewport}} (\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$view, \mbox{\hyperlink{structFloatRect}{Float\+Rect}} view\+\_\+port)
+\begin{DoxyCompactList}\small\item\em setter pour le cadre de vue de la fenêtre \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ViewWrapper_8h_ad945b3ea7cee6bd3cf12a34838b1e97a}{set\+Center}} (\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$view, float x, float y)
+\begin{DoxyCompactList}\small\item\em setter pour le centre de la vue de la fenêtre \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVector2f}{Vector2f}} \mbox{\hyperlink{ViewWrapper_8h_a491368ae44106f056abfcb1cdf8da622}{get\+Center}} (\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$view)
+\begin{DoxyCompactList}\small\item\em getter pour le centre de la vue \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ViewWrapper_8h_af5c1b14012708151be051b075829cb9d}{move\+View}} (\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$view, float offsetX, float offsetY)
+\begin{DoxyCompactList}\small\item\em bouge la vue (i.\+e la caméra) de la fenêtre \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ViewWrapper_8h_a21b6cac1098e5f97a727f6dee2054300}{zoom\+View}} (\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$view, float factor)
+\begin{DoxyCompactList}\small\item\em modifie la taille de la vue de la fenêtre relativement à sa taille courante, cela à pour effet de \textquotesingle{}zoomer\textquotesingle{} si {\itshape factor} $>$ 1, la vue est agrandi (les objets paraissent plus petit) si {\itshape factor} $<$ 1, la vue est rapetissi (les objets paraissent plus gros) et {\itshape factor} == 1 ne change rien \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ViewWrapper_8h_a707f9194b47cc8a6f0116c2360f750f0}{set\+View\+Rotation}} (\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$view, float angle)
+\begin{DoxyCompactList}\small\item\em setter pour la rotation de la vue (0 degrés par défaut) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+petit wrapper pour l\textquotesingle{}objet sf\+::\+View 
+
+\begin{DoxyAuthor}{Author}
+Félicien Fiscus (\href{mailto:felicien.fgay@gmail.com}{\texttt{ felicien.\+fgay@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+View\+Interface.\+h 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/05-\/07
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}\label{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!View@{View}}
+\index{View@{View}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{View}{View}}
+{\footnotesize\ttfamily typedef struct View View}
+
+
+
+Une vue (View) est un rectangle d\textquotesingle{}affichage correspondant à la scène de la fenêtre d\textquotesingle{}affichage, c\textquotesingle{}est la caméra du monde qu\textquotesingle{}affiche l\textquotesingle{}Application. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_ac7414948a1c815b57e4ded6d026042b5}{set\+View}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ViewWrapper_8h_aef2436f172844b7f6f2850c9b45d5d7f}\label{ViewWrapper_8h_aef2436f172844b7f6f2850c9b45d5d7f}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!createView@{createView}}
+\index{createView@{createView}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{createView()}{createView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}}$\ast$ create\+View (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+construit une View sur le tas, en utilisant la vue par défaut de la fenêtre d\textquotesingle{}Application, et en l\textquotesingle{}ajoute directement à l\textquotesingle{}application (donc pas besoin de free côté utilisateur) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) l\textquotesingle{}Application dont la vue de la fenêtre courrante sera utilisé pour créer la nouvelle vue \\
+\hline
+{\em id} & l\textquotesingle{}id associer de manière unique à la vue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la nouvelle vue créer 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ViewWrapper_8h_a491368ae44106f056abfcb1cdf8da622}\label{ViewWrapper_8h_a491368ae44106f056abfcb1cdf8da622}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!getCenter@{getCenter}}
+\index{getCenter@{getCenter}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVector2f}{Vector2f}} get\+Center (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{view }\end{DoxyParamCaption})}
+
+
+
+getter pour le centre de la vue 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_ad945b3ea7cee6bd3cf12a34838b1e97a}{set\+Center}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em view} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structVector2f}{Vector2f}} le centre de la vue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ViewWrapper_8h_aac78d9f0ccddb507f4af277cf31c6858}\label{ViewWrapper_8h_aac78d9f0ccddb507f4af277cf31c6858}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!getViewSize@{getViewSize}}
+\index{getViewSize@{getViewSize}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getViewSize()}{getViewSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVector2f}{Vector2f}} get\+View\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{view }\end{DoxyParamCaption})}
+
+
+
+getter pour la taille de la vue 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em view} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{structVector2f}{Vector2f}} la taille de la vue 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ViewWrapper_8h_af5c1b14012708151be051b075829cb9d}\label{ViewWrapper_8h_af5c1b14012708151be051b075829cb9d}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!moveView@{moveView}}
+\index{moveView@{moveView}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{moveView()}{moveView()}}
+{\footnotesize\ttfamily void move\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{view,  }\item[{float}]{offsetX,  }\item[{float}]{offsetY }\end{DoxyParamCaption})}
+
+
+
+bouge la vue (i.\+e la caméra) de la fenêtre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & (!=NULL) \\
+\hline
+{\em offsetX} & quantité de déplacement en X \\
+\hline
+{\em offsetY} & quantité de déplacement en Y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ViewWrapper_8h_ad945b3ea7cee6bd3cf12a34838b1e97a}\label{ViewWrapper_8h_ad945b3ea7cee6bd3cf12a34838b1e97a}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!setCenter@{setCenter}}
+\index{setCenter@{setCenter}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setCenter()}{setCenter()}}
+{\footnotesize\ttfamily void set\+Center (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{view,  }\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+setter pour le centre de la vue de la fenêtre 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em view} & (!= NULL) \\
+\hline
+{\em x} & coordonnée x du nouveau centre \\
+\hline
+{\em y} & coordonnée y du nouveau centre \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ViewWrapper_8h_a3641e2d5cf5a2306afd9ddd49cc8b2e3}\label{ViewWrapper_8h_a3641e2d5cf5a2306afd9ddd49cc8b2e3}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!setViewport@{setViewport}}
+\index{setViewport@{setViewport}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setViewport()}{setViewport()}}
+{\footnotesize\ttfamily void set\+Viewport (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{view,  }\item[{\mbox{\hyperlink{structFloatRect}{Float\+Rect}}}]{view\+\_\+port }\end{DoxyParamCaption})}
+
+
+
+setter pour le cadre de vue de la fenêtre 
+
+\begin{DoxyNote}{Note}
+le cadre de vue est exprimé en terme de ratio, (0, 0, 1, 1) représente la fenêtre complet et par exemple (0, 0, 0.\+5, 1) correspond à la moitié gauche de la fenêtre (0.\+5, 0, 0.\+5, 1) correspond à la moitié droite, etc. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em view} & (!=NULL) \\
+\hline
+{\em view\+\_\+port} & le nouveau cadre de vue considéré \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ViewWrapper_8h_a707f9194b47cc8a6f0116c2360f750f0}\label{ViewWrapper_8h_a707f9194b47cc8a6f0116c2360f750f0}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!setViewRotation@{setViewRotation}}
+\index{setViewRotation@{setViewRotation}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setViewRotation()}{setViewRotation()}}
+{\footnotesize\ttfamily void set\+View\+Rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{view,  }\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+setter pour la rotation de la vue (0 degrés par défaut) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & (!= NULL) \\
+\hline
+{\em angle} & (en degrés) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}\label{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!setViewSize@{setViewSize}}
+\index{setViewSize@{setViewSize}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setViewSize()}{setViewSize()}}
+{\footnotesize\ttfamily void set\+View\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{view,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+
+
+setters pour la taille de la vue de la fenêtre une vue est un rectangle correspondant à la partie visible du monde, par défaut la taille est celle du target (de la fenêtre) 
+
+\begin{DoxyNote}{Note}
+si la vue est de taille plus grande que la fenêtre, ça fait l\textquotesingle{}effet de dézoomer sur la partie au centre de la vue. Si la vue est de taille plus petite que la fenêtre, ça fait l\textquotesingle{}effet de zoomer sur la partie au centre de la vue 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a21b6cac1098e5f97a727f6dee2054300}{zoom\+View}} 
+
+\mbox{\hyperlink{ViewWrapper_8h_aac78d9f0ccddb507f4af277cf31c6858}{get\+View\+Size}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em view} & (!=NULL) \\
+\hline
+{\em width} & nouvelle largeur \\
+\hline
+{\em height} & nouvelle hauteur \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ViewWrapper_8h_a21b6cac1098e5f97a727f6dee2054300}\label{ViewWrapper_8h_a21b6cac1098e5f97a727f6dee2054300}} 
+\index{ViewWrapper.h@{ViewWrapper.h}!zoomView@{zoomView}}
+\index{zoomView@{zoomView}!ViewWrapper.h@{ViewWrapper.h}}
+\doxysubsubsection{\texorpdfstring{zoomView()}{zoomView()}}
+{\footnotesize\ttfamily void zoom\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{view,  }\item[{float}]{factor }\end{DoxyParamCaption})}
+
+
+
+modifie la taille de la vue de la fenêtre relativement à sa taille courante, cela à pour effet de \textquotesingle{}zoomer\textquotesingle{} si {\itshape factor} $>$ 1, la vue est agrandi (les objets paraissent plus petit) si {\itshape factor} $<$ 1, la vue est rapetissi (les objets paraissent plus gros) et {\itshape factor} == 1 ne change rien 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em view} & (!= NULL) \\
+\hline
+{\em factor} & \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=The School Battle
+Comment=game
+Exec=/usr/bin/schoolBattle
+Icon=/usr/share/schoolBattle/Ressources/Texture/school-battle.ico
+Terminal=false
+Type=Application

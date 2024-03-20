@@ -1,0 +1,705 @@
+\hypertarget{ApplicationWrapper_8h}{}\doxysection{Application\+Wrapper.\+h File Reference}
+\label{ApplicationWrapper_8h}\index{ApplicationWrapper.h@{ApplicationWrapper.h}}
+
+
+ceci est l\textquotesingle{}interface C pour l\textquotesingle{}objet C++ Application  
+
+
+{\ttfamily \#include \char`\"{}SFMLEvents.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Utility.\+h\char`\"{}}\newline
+Include dependency graph for Application\+Wrapper.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{ApplicationWrapper_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{ApplicationWrapper_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}\label{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}} 
+typedef struct \mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} \mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}}
+\begin{DoxyCompactList}\small\item\em L\textquotesingle{}objet Application est responsable de créer et afficher la fenêtre d\textquotesingle{}application et son contenu, de stocker les différentes ressources (textures, polices d\textquotesingle{}écritures, son et musique) -\/$>$ add\+\_\+\+Texture add\+\_\+\+Font add\+\_\+\+Sound, et de gérer et capter les évènements (clavier, souris) -\/$>$ \mbox{\hyperlink{SFMLEvents_8h}{SFMLEvents.\+h}}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}} \mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}}
+\begin{DoxyCompactList}\small\item\em objet pouvant être rendu à l\textquotesingle{}écran via l\textquotesingle{}application \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ApplicationWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}\label{ApplicationWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}} 
+typedef struct View {\bfseries View}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$ \mbox{\hyperlink{ApplicationWrapper_8h_a5b95ae85a31e6294a7aab7ba1c5f9187}{get\+New\+Application}} (unsigned int win\+WIDTH, unsigned int win\+HEIGHT, const char $\ast$win\+\_\+title)
+\begin{DoxyCompactList}\small\item\em Construit un nouvelle objet Application, alloué sur le tas. C\textquotesingle{}est à l\textquotesingle{}utilisateur de libérer la mémoire allouer par cette fonction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_add9cf7ffcb3d2dcf86ba47014614b4ff}{free\+\_\+\+Application}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em détruit l\textquotesingle{}objet application, en prenant soin de libérer la mémoire alloué par les ressources (cf. add\+\_\+\+Texture ) ainsi que par les Render\+Object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_a5e83cdcf85bb4dd92e7582ae1ff42ae3}{close\+Application}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em arrête de rendre la fenêtre de rendu (i.\+e ça ferme la fenêtre) mais l\textquotesingle{}application n\textquotesingle{}est pas détruite ! \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ApplicationWrapper_8h_aaa626f0d20c41ce37f56c7a8cb142749}{is\+\_\+running}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em getter pour savoir si la fenêtre est ouverte et si l\textquotesingle{}application tourne \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{ApplicationWrapper_8h_a96ca0cfb77ef97f8141e65d43868ce9d}{get\+Window\+WIDTH}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em getters pour la taille de la fenêtre \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{ApplicationWrapper_8h_a3423ce8636be87e12ca7a871d0a2f842}\label{ApplicationWrapper_8h_a3423ce8636be87e12ca7a871d0a2f842}} 
+unsigned int {\bfseries get\+Window\+HEIGHT} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\item 
+float \mbox{\hyperlink{ApplicationWrapper_8h_ad8cba21cf77ac33c21dc23d2631975a4}{get\+Mouse\+PositionX}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em Getter pour la position X du curseur de la souris la position retourné est celle par rapport à la vue de la fenêtre c\textquotesingle{}est donc les coordonnées dans le monde et non dans la fenêtre. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{ApplicationWrapper_8h_a82e707c0d1f1600102388a4bf830ee4f}{get\+Mouse\+PositionY}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em Getter pour la position Y du curseur de la souris la position retourné est celle par rapport à la vue de la fenêtre c\textquotesingle{}est donc les coordonnées dans le monde et non dans la fenêtre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structVector2f}{Vector2f}} \mbox{\hyperlink{ApplicationWrapper_8h_aa8d53f646f762690404f8f1d0ef9fc96}{get\+Mouse\+Position}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, \mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$reference\+\_\+view)
+\begin{DoxyCompactList}\small\item\em Getter pour la position du curseur de la souris la position retourné est celle par rapport à la vue de référence passé en argument c\textquotesingle{}est donc les coordonnées dans le monde de la vue en question et non dans la fenêtre. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{ApplicationWrapper_8h_abfbbe199b88e36439e01430f1279c40c}{get\+Absolute\+Mouse\+PositionX}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em getter pour la position X de la souris dans le référentiel de la fenêtre, donc sans prendre en compte la vue de la fenêtre \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{ApplicationWrapper_8h_ac204234a359916003798ebe02a3d53fe}{get\+Absolute\+Mouse\+PositionY}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em getter pour la position Y de la souris dans le référentiel de la fenêtre, donc sans prendre en compte la vue de la fenêtre \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{ApplicationWrapper_8h_abf459aebf13f2c036d832061822cb2be}{get\+Elapsed\+Time}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em getter pour le temps écoulé depuis le dernier appel à cette fonction \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_ad9c20a2c45e6937753ee64a24f0e1af8}{render}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em fonction permettant de rendre à l\textquotesingle{}écran la fenêtre créer par un appel à get\+New\+Application ainsi que tout les Render\+Object et Label dans l\textquotesingle{}application. La fonction rend les objets dans un certain ordre en fonction de la couche à laquelle ils sont, allant de la couche la plus basse (Background), la première à être affichée, à la couche la plus haute (UI), la dernière à être affichée. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ApplicationWrapper_8h_acc0b738ca62f49d84663bc9245e14de2}{is\+An\+Event\+Happening}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, SFML\+\_\+\+EVENTS $\ast$event)
+\begin{DoxyCompactList}\small\item\em fonction pour gérer les évènements, si un évènement connu à lieu ( SFML\+\_\+\+EVENTS ) la fonction assigne à \textquotesingle{}event\textquotesingle{} cette évènement \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ApplicationWrapper_8h_ae818364704e60b9da0ae81a83d6de2a3}{is\+Outside\+Window}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, \mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}} $\ast$obj, \mbox{\hyperlink{structVector2f}{Vector2f}} $\ast$dir)
+\begin{DoxyCompactList}\small\item\em vérifie si l\textquotesingle{}objet passé en argument est en dehors de la vue de la fenêtre \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_a8af7637d559a96749c3627916e7114f2}{add\+\_\+\+Texture}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, const char $\ast$file\+Name, int id)
+\begin{DoxyCompactList}\small\item\em Ajoute une texture à l\textquotesingle{}application et l\textquotesingle{}associe via un entier, son \textquotesingle{}id\textquotesingle{}, pour faciliter l\textquotesingle{}obtention de la texture lors de la création de sprite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_a31b8d68d6a3cf12da7004facf7a718e1}{add\+\_\+\+Sound}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, const char $\ast$file\+Name, int id)
+\begin{DoxyCompactList}\small\item\em Ajoute un effet sonore à l\textquotesingle{}application et l\textquotesingle{}associe via un entier, son \textquotesingle{}id\textquotesingle{}, pour faciliter l\textquotesingle{}obtention de l\textquotesingle{}effet sonore lors de l\textquotesingle{}ajout à un Render\+Object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_a1fe94b55ae663f371b08fdafad857555}{open\+Music\+File}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em ouvre le fichier de musique indiquer pour qu\textquotesingle{}il soit prêt à être jouer. S\textquotesingle{}il y a déja une musique, la fonction arrête la musique courrante et la change en la nouvelle. Par défaut, la musique courrante se joue en boucle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_a4e57cfcdc4aeb6926a0221977cc9bc2a}{play\+Current\+Music}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em joue la musique courrante ou la resume \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_a5a0378a5013f64b4b43e84f9d7ae3c3a}{pause\+Current\+Music}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em met en pause la musique courrante \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_ac7414948a1c815b57e4ded6d026042b5}{set\+View}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, int view\+ID)
+\begin{DoxyCompactList}\small\item\em met à jour la vue de la fenêtre \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_aa562be38b222a6fb52dc704d8e5744c7}{render\+FPS}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, bool flag, int font\+ID)
+\begin{DoxyCompactList}\small\item\em active ou pas l\textquotesingle{}affichage des fps en haut à gauche de la fenêtre \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$ \mbox{\hyperlink{ApplicationWrapper_8h_a246ba5849feb37b2fc2981b17be6a6b7}{get\+View}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, int id)
+\begin{DoxyCompactList}\small\item\em getter pour une des vues stocker dans l\textquotesingle{}application \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_addff9c456b69dda05a577c4685e32e93}{stop\+Current\+Music}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em arrête complètement la musique courrante \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_a0c8b6f53cc3ebe24f34e8a570c6ae63a}{set\+Music\+Volume}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, float volume)
+\begin{DoxyCompactList}\small\item\em setter pour le volume de la musique courrante \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{ApplicationWrapper_8h_a4644e34e8975bbb9a636866554b60ed4}{get\+Music\+Volume}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app)
+\begin{DoxyCompactList}\small\item\em getter pour le volume de la musique courrante \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_ac8f254439029299576dc04d961740820}{add\+\_\+\+Font}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, const char $\ast$file\+Name, int id)
+\begin{DoxyCompactList}\small\item\em Ajoute une police d\textquotesingle{}écriture comme ressource à l\textquotesingle{}application et l\textquotesingle{}associe via un entier, son \textquotesingle{}id\textquotesingle{}, pour faciliter l\textquotesingle{}obtention de la police lors de l\textquotesingle{}ajout à un Label. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ApplicationWrapper_8h_abf7e69bae1f7dee4e96efe18774f26f7}{change\+Render\+Object\+Layer}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, \mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}} $\ast$obj, int new\+\_\+layer)
+\begin{DoxyCompactList}\small\item\em change la couche d\textquotesingle{}ordre d\textquotesingle{}affichage du Render\+Object passé en argument \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{ApplicationWrapper_8h_a9a7739cce5c9ac943d3421b653b92cef}{remove\+Render\+Object}} (\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$app, \mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}} $\ast$obj\+\_\+to\+\_\+remove)
+\begin{DoxyCompactList}\small\item\em enlève de l\textquotesingle{}application et libère la mémoire occupé par un Render\+Object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ceci est l\textquotesingle{}interface C pour l\textquotesingle{}objet C++ Application 
+
+\begin{DoxyAuthor}{Author}
+Félicien Fiscus (\href{mailto:felicien.fgay@gmail.com}{\texttt{ felicien.\+fgay@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxySeeAlso}{See also}
+Application.\+h 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/04-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}\label{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!RenderObject@{RenderObject}}
+\index{RenderObject@{RenderObject}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{RenderObject}{RenderObject}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}} \mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}}}
+
+
+
+objet pouvant être rendu à l\textquotesingle{}écran via l\textquotesingle{}application 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{RenderObjectWrapper_8h_aa5acaf44735af949677775843a3bcc69}{add\+New\+Render\+Object}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ApplicationWrapper_8h_ac8f254439029299576dc04d961740820}\label{ApplicationWrapper_8h_ac8f254439029299576dc04d961740820}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!add\_Font@{add\_Font}}
+\index{add\_Font@{add\_Font}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{add\_Font()}{add\_Font()}}
+{\footnotesize\ttfamily void add\+\_\+\+Font (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{const char $\ast$}]{file\+Name,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Ajoute une police d\textquotesingle{}écriture comme ressource à l\textquotesingle{}application et l\textquotesingle{}associe via un entier, son \textquotesingle{}id\textquotesingle{}, pour faciliter l\textquotesingle{}obtention de la police lors de l\textquotesingle{}ajout à un Label. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{LabelWrapper_8h_a28185e6bd120924ac0b821dbb9bc7abc}{add\+New\+Label}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & le file path relatif à l\textquotesingle{}endroit où se trouve votre éxécutable \\
+\hline
+{\em id} & un entier unique correspondant à l\textquotesingle{}id associé à la police d\textquotesingle{}écriture \\
+\hline
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a31b8d68d6a3cf12da7004facf7a718e1}\label{ApplicationWrapper_8h_a31b8d68d6a3cf12da7004facf7a718e1}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!add\_Sound@{add\_Sound}}
+\index{add\_Sound@{add\_Sound}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{add\_Sound()}{add\_Sound()}}
+{\footnotesize\ttfamily void add\+\_\+\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{const char $\ast$}]{file\+Name,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Ajoute un effet sonore à l\textquotesingle{}application et l\textquotesingle{}associe via un entier, son \textquotesingle{}id\textquotesingle{}, pour faciliter l\textquotesingle{}obtention de l\textquotesingle{}effet sonore lors de l\textquotesingle{}ajout à un Render\+Object. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{RenderObjectWrapper_8h_a7956afeaf1fd65a71ca1d3db069173aa}{set\+Sound\+Effect}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & le file path relatif à l\textquotesingle{}endroit où se trouve votre éxécutable \\
+\hline
+{\em id} & un entier unique correspondant à l\textquotesingle{}id associé à l\textquotesingle{}effet sonore \\
+\hline
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a8af7637d559a96749c3627916e7114f2}\label{ApplicationWrapper_8h_a8af7637d559a96749c3627916e7114f2}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!add\_Texture@{add\_Texture}}
+\index{add\_Texture@{add\_Texture}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{add\_Texture()}{add\_Texture()}}
+{\footnotesize\ttfamily void add\+\_\+\+Texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{const char $\ast$}]{file\+Name,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Ajoute une texture à l\textquotesingle{}application et l\textquotesingle{}associe via un entier, son \textquotesingle{}id\textquotesingle{}, pour faciliter l\textquotesingle{}obtention de la texture lors de la création de sprite. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{RenderObjectWrapper_8h_aa5acaf44735af949677775843a3bcc69}{add\+New\+Render\+Object}} \mbox{\hyperlink{AnimationWrapper_8h_a5b3bd040106807ffd5b8d52616f9205c}{create\+Animation}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & le file path relatif à l\textquotesingle{}endroit où se trouve votre éxécutable \\
+\hline
+{\em id} & un entier unique correspondant à l\textquotesingle{}id associé à la texture \\
+\hline
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_abf7e69bae1f7dee4e96efe18774f26f7}\label{ApplicationWrapper_8h_abf7e69bae1f7dee4e96efe18774f26f7}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!changeRenderObjectLayer@{changeRenderObjectLayer}}
+\index{changeRenderObjectLayer@{changeRenderObjectLayer}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{changeRenderObjectLayer()}{changeRenderObjectLayer()}}
+{\footnotesize\ttfamily int change\+Render\+Object\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}} $\ast$}]{obj,  }\item[{int}]{new\+\_\+layer }\end{DoxyParamCaption})}
+
+
+
+change la couche d\textquotesingle{}ordre d\textquotesingle{}affichage du Render\+Object passé en argument 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{SFMLEvents_8h_a62713f71166a253cddfb1cb4e9810bf0}{Layers}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+{\em obj} & le Render\+Object en question (!= NULL) \\
+\hline
+{\em new\+\_\+layer} & la nouvelle couche à laquelle appartiendra obj après l\textquotesingle{}exécution de la fonction (cf. Layers) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si l\textquotesingle{}objet a été trouvé et a changer de couche, 0 sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a5e83cdcf85bb4dd92e7582ae1ff42ae3}\label{ApplicationWrapper_8h_a5e83cdcf85bb4dd92e7582ae1ff42ae3}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!closeApplication@{closeApplication}}
+\index{closeApplication@{closeApplication}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{closeApplication()}{closeApplication()}}
+{\footnotesize\ttfamily void close\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+arrête de rendre la fenêtre de rendu (i.\+e ça ferme la fenêtre) mais l\textquotesingle{}application n\textquotesingle{}est pas détruite ! 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_add9cf7ffcb3d2dcf86ba47014614b4ff}{free\+\_\+\+Application}} 
+
+\mbox{\hyperlink{ApplicationWrapper_8h_aaa626f0d20c41ce37f56c7a8cb142749}{is\+\_\+running}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_add9cf7ffcb3d2dcf86ba47014614b4ff}\label{ApplicationWrapper_8h_add9cf7ffcb3d2dcf86ba47014614b4ff}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!free\_Application@{free\_Application}}
+\index{free\_Application@{free\_Application}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{free\_Application()}{free\_Application()}}
+{\footnotesize\ttfamily void free\+\_\+\+Application (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+détruit l\textquotesingle{}objet application, en prenant soin de libérer la mémoire alloué par les ressources (cf. add\+\_\+\+Texture ) ainsi que par les Render\+Object 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{RenderObjectWrapper_8h_aa5acaf44735af949677775843a3bcc69}{add\+New\+Render\+Object}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & pointeur valide vers l\textquotesingle{}application \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_abfbbe199b88e36439e01430f1279c40c}\label{ApplicationWrapper_8h_abfbbe199b88e36439e01430f1279c40c}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getAbsoluteMousePositionX@{getAbsoluteMousePositionX}}
+\index{getAbsoluteMousePositionX@{getAbsoluteMousePositionX}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getAbsoluteMousePositionX()}{getAbsoluteMousePositionX()}}
+{\footnotesize\ttfamily float get\+Absolute\+Mouse\+PositionX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+getter pour la position X de la souris dans le référentiel de la fenêtre, donc sans prendre en compte la vue de la fenêtre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la coordonnée X du curseur par rapport à la fenêtre d\textquotesingle{}application 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_ac204234a359916003798ebe02a3d53fe}\label{ApplicationWrapper_8h_ac204234a359916003798ebe02a3d53fe}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getAbsoluteMousePositionY@{getAbsoluteMousePositionY}}
+\index{getAbsoluteMousePositionY@{getAbsoluteMousePositionY}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getAbsoluteMousePositionY()}{getAbsoluteMousePositionY()}}
+{\footnotesize\ttfamily float get\+Absolute\+Mouse\+PositionY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+getter pour la position Y de la souris dans le référentiel de la fenêtre, donc sans prendre en compte la vue de la fenêtre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la coordonnée Y du curseur par rapport à la fenêtre d\textquotesingle{}application 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_abf459aebf13f2c036d832061822cb2be}\label{ApplicationWrapper_8h_abf459aebf13f2c036d832061822cb2be}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getElapsedTime@{getElapsedTime}}
+\index{getElapsedTime@{getElapsedTime}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getElapsedTime()}{getElapsedTime()}}
+{\footnotesize\ttfamily float get\+Elapsed\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+getter pour le temps écoulé depuis le dernier appel à cette fonction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le différentiel de temps en secondes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_aa8d53f646f762690404f8f1d0ef9fc96}\label{ApplicationWrapper_8h_aa8d53f646f762690404f8f1d0ef9fc96}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getMousePosition@{getMousePosition}}
+\index{getMousePosition@{getMousePosition}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getMousePosition()}{getMousePosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structVector2f}{Vector2f}} get\+Mouse\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{\mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}} $\ast$}]{reference\+\_\+view }\end{DoxyParamCaption})}
+
+
+
+Getter pour la position du curseur de la souris la position retourné est celle par rapport à la vue de référence passé en argument c\textquotesingle{}est donc les coordonnées dans le monde de la vue en question et non dans la fenêtre. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}} \mbox{\hyperlink{ViewWrapper_8h_aef2436f172844b7f6f2850c9b45d5d7f}{create\+View}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!=NULL) \\
+\hline
+{\em reference\+\_\+view} & la vue de référence en question \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le vecteur position (X, Y) du curseur de la souris dans le référentiel de la vue spécifiée en argument 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_ad8cba21cf77ac33c21dc23d2631975a4}\label{ApplicationWrapper_8h_ad8cba21cf77ac33c21dc23d2631975a4}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getMousePositionX@{getMousePositionX}}
+\index{getMousePositionX@{getMousePositionX}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getMousePositionX()}{getMousePositionX()}}
+{\footnotesize\ttfamily float get\+Mouse\+PositionX (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+Getter pour la position X du curseur de la souris la position retourné est celle par rapport à la vue de la fenêtre c\textquotesingle{}est donc les coordonnées dans le monde et non dans la fenêtre. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}} \mbox{\hyperlink{ViewWrapper_8h_aef2436f172844b7f6f2850c9b45d5d7f}{create\+View}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!=NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la coordonnée X du curseur de la souris dans le référentiel de la vue actuellement utilisée par l\textquotesingle{}application 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a82e707c0d1f1600102388a4bf830ee4f}\label{ApplicationWrapper_8h_a82e707c0d1f1600102388a4bf830ee4f}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getMousePositionY@{getMousePositionY}}
+\index{getMousePositionY@{getMousePositionY}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getMousePositionY()}{getMousePositionY()}}
+{\footnotesize\ttfamily float get\+Mouse\+PositionY (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+Getter pour la position Y du curseur de la souris la position retourné est celle par rapport à la vue de la fenêtre c\textquotesingle{}est donc les coordonnées dans le monde et non dans la fenêtre. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}} \mbox{\hyperlink{ViewWrapper_8h_aef2436f172844b7f6f2850c9b45d5d7f}{create\+View}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!=NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+la coordonnée Y du curseur de la souris dans le référentiel de la vue actuellement utilisée par l\textquotesingle{}application 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a4644e34e8975bbb9a636866554b60ed4}\label{ApplicationWrapper_8h_a4644e34e8975bbb9a636866554b60ed4}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getMusicVolume@{getMusicVolume}}
+\index{getMusicVolume@{getMusicVolume}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getMusicVolume()}{getMusicVolume()}}
+{\footnotesize\ttfamily float get\+Music\+Volume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+getter pour le volume de la musique courrante 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_a0c8b6f53cc3ebe24f34e8a570c6ae63a}{set\+Music\+Volume}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!=NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+volume sonore entre 0 et 100 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a5b95ae85a31e6294a7aab7ba1c5f9187}\label{ApplicationWrapper_8h_a5b95ae85a31e6294a7aab7ba1c5f9187}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getNewApplication@{getNewApplication}}
+\index{getNewApplication@{getNewApplication}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getNewApplication()}{getNewApplication()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}}$\ast$ get\+New\+Application (\begin{DoxyParamCaption}\item[{unsigned int}]{win\+WIDTH,  }\item[{unsigned int}]{win\+HEIGHT,  }\item[{const char $\ast$}]{win\+\_\+title }\end{DoxyParamCaption})}
+
+
+
+Construit un nouvelle objet Application, alloué sur le tas. C\textquotesingle{}est à l\textquotesingle{}utilisateur de libérer la mémoire allouer par cette fonction. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_add9cf7ffcb3d2dcf86ba47014614b4ff}{free\+\_\+\+Application}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em width} & la largeur de la fenêtre afficher à l\textquotesingle{}écran \\
+\hline
+{\em height} & la hauteur de la fenêtre afficher à l\textquotesingle{}écran \\
+\hline
+{\em win\+Title} & le nom de la fenêtre \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le pointeur vers la nouvelle application crée 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a246ba5849feb37b2fc2981b17be6a6b7}\label{ApplicationWrapper_8h_a246ba5849feb37b2fc2981b17be6a6b7}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getView@{getView}}
+\index{getView@{getView}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getView()}{getView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ViewWrapper_8h_a5375fb36a449d2445b3fc4475137fcf0}{View}}$\ast$ get\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+getter pour une des vues stocker dans l\textquotesingle{}application 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_aef2436f172844b7f6f2850c9b45d5d7f}{create\+View}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & != NULL \\
+\hline
+{\em id} & l\textquotesingle{}entier associé de manière unique une vue \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+le pointeur vers la vue associé à l\textquotesingle{}entier \textquotesingle{}id\textquotesingle{} passé en argument 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a96ca0cfb77ef97f8141e65d43868ce9d}\label{ApplicationWrapper_8h_a96ca0cfb77ef97f8141e65d43868ce9d}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!getWindowWIDTH@{getWindowWIDTH}}
+\index{getWindowWIDTH@{getWindowWIDTH}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{getWindowWIDTH()}{getWindowWIDTH()}}
+{\footnotesize\ttfamily unsigned int get\+Window\+WIDTH (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+getters pour la taille de la fenêtre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!=NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_aaa626f0d20c41ce37f56c7a8cb142749}\label{ApplicationWrapper_8h_aaa626f0d20c41ce37f56c7a8cb142749}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!is\_running@{is\_running}}
+\index{is\_running@{is\_running}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{is\_running()}{is\_running()}}
+{\footnotesize\ttfamily int is\+\_\+running (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+getter pour savoir si la fenêtre est ouverte et si l\textquotesingle{}application tourne 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_a5e83cdcf85bb4dd92e7582ae1ff42ae3}{close\+Application}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si l\textquotesingle{}application tourne 0 sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_acc0b738ca62f49d84663bc9245e14de2}\label{ApplicationWrapper_8h_acc0b738ca62f49d84663bc9245e14de2}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!isAnEventHappening@{isAnEventHappening}}
+\index{isAnEventHappening@{isAnEventHappening}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{isAnEventHappening()}{isAnEventHappening()}}
+{\footnotesize\ttfamily int is\+An\+Event\+Happening (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{SFML\+\_\+\+EVENTS $\ast$}]{event }\end{DoxyParamCaption})}
+
+
+
+fonction pour gérer les évènements, si un évènement connu à lieu ( SFML\+\_\+\+EVENTS ) la fonction assigne à \textquotesingle{}event\textquotesingle{} cette évènement 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{SFMLEvents_8h}{SFMLEvents.\+h}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+{\em event} & le potentiel évènement qui va être retourné (!= NULL) A noté qu\textquotesingle{}en une seule frame il peut se passer plusieurs évènements, il est donc judicieux d\textquotesingle{}utiliser cette fonction avec une while loop plutôt qu\textquotesingle{}un simple if \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si un évènement connu à lieu, 0 sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_ae818364704e60b9da0ae81a83d6de2a3}\label{ApplicationWrapper_8h_ae818364704e60b9da0ae81a83d6de2a3}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!isOutsideWindow@{isOutsideWindow}}
+\index{isOutsideWindow@{isOutsideWindow}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{isOutsideWindow()}{isOutsideWindow()}}
+{\footnotesize\ttfamily int is\+Outside\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}} $\ast$}]{obj,  }\item[{\mbox{\hyperlink{structVector2f}{Vector2f}} $\ast$}]{dir }\end{DoxyParamCaption})}
+
+
+
+vérifie si l\textquotesingle{}objet passé en argument est en dehors de la vue de la fenêtre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+{\em obj} & (!= NULL) \\
+\hline
+{\em dir} & (!=NULL) (! nécessite d\textquotesingle{}être initalisé avec 0, 0 !) vecteur représentant la direction de la potentielle collision entre l\textquotesingle{}objet est les \char`\"{}murs\char`\"{} de la fenêtre. C\textquotesingle{}est-\/à-\/dire\+: (-\/1, 0) -\/$>$ dépasse à gauche (1, 0) -\/$>$ dépasse à droite (0, -\/1) -\/$>$ dépasse en haut (0, 1) -\/$>$ dépasse en bas Si l\textquotesingle{}objet n\textquotesingle{}est pas en dehors, alors dir n\textquotesingle{}est pas modifié. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 si l\textquotesingle{}objet est en dehors, 0 sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a1fe94b55ae663f371b08fdafad857555}\label{ApplicationWrapper_8h_a1fe94b55ae663f371b08fdafad857555}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!openMusicFile@{openMusicFile}}
+\index{openMusicFile@{openMusicFile}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{openMusicFile()}{openMusicFile()}}
+{\footnotesize\ttfamily void open\+Music\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+ouvre le fichier de musique indiquer pour qu\textquotesingle{}il soit prêt à être jouer. S\textquotesingle{}il y a déja une musique, la fonction arrête la musique courrante et la change en la nouvelle. Par défaut, la musique courrante se joue en boucle. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_a4e57cfcdc4aeb6926a0221977cc9bc2a}{play\+Current\+Music}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+{\em file\+Name} & le chemin du fichier de musique relatif à l\textquotesingle{}endroit où se trouve votre éxécutable \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a5a0378a5013f64b4b43e84f9d7ae3c3a}\label{ApplicationWrapper_8h_a5a0378a5013f64b4b43e84f9d7ae3c3a}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!pauseCurrentMusic@{pauseCurrentMusic}}
+\index{pauseCurrentMusic@{pauseCurrentMusic}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{pauseCurrentMusic()}{pauseCurrentMusic()}}
+{\footnotesize\ttfamily void pause\+Current\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+met en pause la musique courrante 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_a4e57cfcdc4aeb6926a0221977cc9bc2a}{play\+Current\+Music}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a4e57cfcdc4aeb6926a0221977cc9bc2a}\label{ApplicationWrapper_8h_a4e57cfcdc4aeb6926a0221977cc9bc2a}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!playCurrentMusic@{playCurrentMusic}}
+\index{playCurrentMusic@{playCurrentMusic}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{playCurrentMusic()}{playCurrentMusic()}}
+{\footnotesize\ttfamily void play\+Current\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+joue la musique courrante ou la resume 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_a5a0378a5013f64b4b43e84f9d7ae3c3a}{pause\+Current\+Music}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a9a7739cce5c9ac943d3421b653b92cef}\label{ApplicationWrapper_8h_a9a7739cce5c9ac943d3421b653b92cef}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!removeRenderObject@{removeRenderObject}}
+\index{removeRenderObject@{removeRenderObject}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{removeRenderObject()}{removeRenderObject()}}
+{\footnotesize\ttfamily void remove\+Render\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a6c1e0406a3abd71b44cc79840e471dc0}{Render\+Object}} $\ast$}]{obj\+\_\+to\+\_\+remove }\end{DoxyParamCaption})}
+
+
+
+enlève de l\textquotesingle{}application et libère la mémoire occupé par un Render\+Object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & l\textquotesingle{}application en question (!= NULL) \\
+\hline
+{\em obj\+\_\+to\+\_\+remove} & l\textquotesingle{}objet a enlever (!= NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_ad9c20a2c45e6937753ee64a24f0e1af8}\label{ApplicationWrapper_8h_ad9c20a2c45e6937753ee64a24f0e1af8}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!render@{render}}
+\index{render@{render}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+fonction permettant de rendre à l\textquotesingle{}écran la fenêtre créer par un appel à get\+New\+Application ainsi que tout les Render\+Object et Label dans l\textquotesingle{}application. La fonction rend les objets dans un certain ordre en fonction de la couche à laquelle ils sont, allant de la couche la plus basse (Background), la première à être affichée, à la couche la plus haute (UI), la dernière à être affichée. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{SFMLEvents_8h_a62713f71166a253cddfb1cb4e9810bf0}{Layers}} 
+
+\mbox{\hyperlink{RenderObjectWrapper_8h_aa5acaf44735af949677775843a3bcc69}{add\+New\+Render\+Object}} \mbox{\hyperlink{LabelWrapper_8h_a28185e6bd120924ac0b821dbb9bc7abc}{add\+New\+Label}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_aa562be38b222a6fb52dc704d8e5744c7}\label{ApplicationWrapper_8h_aa562be38b222a6fb52dc704d8e5744c7}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!renderFPS@{renderFPS}}
+\index{renderFPS@{renderFPS}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{renderFPS()}{renderFPS()}}
+{\footnotesize\ttfamily void render\+FPS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{bool}]{flag,  }\item[{int}]{font\+ID }\end{DoxyParamCaption})}
+
+
+
+active ou pas l\textquotesingle{}affichage des fps en haut à gauche de la fenêtre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+{\em flag} & 1 -\/$>$ l\textquotesingle{}active, 0 -\/$>$ le désactive (désactivé par défaut) \\
+\hline
+{\em font\+ID} & l\textquotesingle{}entier indifiant de manière unique le font utilisé pour l\textquotesingle{}affichage du texte (doit être présent) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_ac8f254439029299576dc04d961740820}{add\+\_\+\+Font}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{ApplicationWrapper_8h_a0c8b6f53cc3ebe24f34e8a570c6ae63a}\label{ApplicationWrapper_8h_a0c8b6f53cc3ebe24f34e8a570c6ae63a}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!setMusicVolume@{setMusicVolume}}
+\index{setMusicVolume@{setMusicVolume}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setMusicVolume()}{setMusicVolume()}}
+{\footnotesize\ttfamily void set\+Music\+Volume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{float}]{volume }\end{DoxyParamCaption})}
+
+
+
+setter pour le volume de la musique courrante 
+
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!=NULL) \\
+\hline
+{\em volume} & le nouveau volume de la musique (entre 0 (aucun son) et 100 (le maximum de son), par défaut est à 100) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_ac7414948a1c815b57e4ded6d026042b5}\label{ApplicationWrapper_8h_ac7414948a1c815b57e4ded6d026042b5}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!setView@{setView}}
+\index{setView@{setView}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{setView()}{setView()}}
+{\footnotesize\ttfamily void set\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app,  }\item[{int}]{view\+ID }\end{DoxyParamCaption})}
+
+
+
+met à jour la vue de la fenêtre 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ViewWrapper_8h_a380a7ea04f420772a90d359bcf74a58c}{set\+View\+Size}} \mbox{\hyperlink{ViewWrapper_8h_aef2436f172844b7f6f2850c9b45d5d7f}{create\+View}} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app(!=\+NULL)} & \\
+\hline
+{\em view\+ID} & l\textquotesingle{}entier associé de manière unique à la vue en question \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{ApplicationWrapper_8h_addff9c456b69dda05a577c4685e32e93}\label{ApplicationWrapper_8h_addff9c456b69dda05a577c4685e32e93}} 
+\index{ApplicationWrapper.h@{ApplicationWrapper.h}!stopCurrentMusic@{stopCurrentMusic}}
+\index{stopCurrentMusic@{stopCurrentMusic}!ApplicationWrapper.h@{ApplicationWrapper.h}}
+\doxysubsubsection{\texorpdfstring{stopCurrentMusic()}{stopCurrentMusic()}}
+{\footnotesize\ttfamily void stop\+Current\+Music (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{ApplicationWrapper_8h_a807c40e39d8fc1c930824f73879aa0b3}{Application}} $\ast$}]{app }\end{DoxyParamCaption})}
+
+
+
+arrête complètement la musique courrante 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_a4e57cfcdc4aeb6926a0221977cc9bc2a}{play\+Current\+Music}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em app} & (!= NULL) \\
+\hline
+\end{DoxyParams}

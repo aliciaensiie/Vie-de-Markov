@@ -1,0 +1,178 @@
+\hypertarget{SFMLEvents_8h}{}\doxysection{SFMLEvents.\+h File Reference}
+\label{SFMLEvents_8h}\index{SFMLEvents.h@{SFMLEvents.h}}
+
+
+petite header pour stocker tout les différents évènements  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{SFMLEvents_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{SFMLEvents_8h_ac0feab380610937671326121db3f7c6d}\label{SFMLEvents_8h_ac0feab380610937671326121db3f7c6d}} 
+typedef enum SFML\+\_\+\+EVENTS {\bfseries SFML\+\_\+\+EVENTS}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{SFMLEvents_8h_a62713f71166a253cddfb1cb4e9810bf0}{Layers}} \{ \newline
+{\bfseries Background}
+, {\bfseries Middle\+Ground}
+, {\bfseries Fore\+Ground}
+, {\bfseries UI}
+, \newline
+{\bfseries Layers\+Count}
+ \}
+\begin{DoxyCompactList}\small\item\em les différentes couche d\textquotesingle{}ordre d\textquotesingle{}affichage \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{SFMLEvents_8h_af715f8a24810d9ec134fb1f742241c13}\label{SFMLEvents_8h_af715f8a24810d9ec134fb1f742241c13}} 
+enum {\bfseries SFML\+\_\+\+EVENTS} \{ \newline
+{\bfseries Unknown} = -\/1
+, {\bfseries MOUSE\+\_\+\+LEFT\+\_\+\+Pressed}
+, {\bfseries MOUSE\+\_\+\+RIGHT\+\_\+\+Pressed}
+, {\bfseries MOUSE\+\_\+\+LEFT\+\_\+\+Released}
+, \newline
+{\bfseries MOUSE\+\_\+\+RIGHT\+\_\+\+Released}
+, {\bfseries MOUSE\+\_\+\+MOVED}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+A}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+B}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+C}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+D}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+E}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+F}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+G}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+H}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+I}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+J}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+K}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+L}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+M}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+N}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+O}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+P}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+Q}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+R}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+S}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+T}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+U}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+V}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+W}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+X}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+Y}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+Z}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+\+Enter}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+\+Esc}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+\+Back\+Space}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+\+Space}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+0}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+1}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+2}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+3}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+4}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+5}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+6}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+7}
+, \newline
+{\bfseries KEY\+\_\+\+PRESSED\+\_\+8}
+, {\bfseries KEY\+\_\+\+PRESSED\+\_\+9}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+A}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+B}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+C}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+D}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+E}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+F}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+G}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+H}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+I}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+J}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+K}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+L}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+M}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+N}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+O}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+P}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+Q}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+R}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+S}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+T}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+U}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+V}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+W}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+X}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+Y}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+Z}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+\+Enter}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+\+Esc}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+\+Back\+Space}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+\+Space}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+0}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+1}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+2}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+3}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+4}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+5}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+6}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+7}
+, \newline
+{\bfseries KEY\+\_\+\+RELEASED\+\_\+8}
+, {\bfseries KEY\+\_\+\+RELEASED\+\_\+9}
+, {\bfseries SFML\+\_\+\+EVENTS\+\_\+\+COUNT}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+petite header pour stocker tout les différents évènements 
+
+\begin{DoxyAuthor}{Author}
+Félicien Fiscus (\href{mailto:felicien.fgay@gmail.com}{\texttt{ felicien.\+fgay@gmail.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/04-\/16
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{SFMLEvents_8h_a62713f71166a253cddfb1cb4e9810bf0}\label{SFMLEvents_8h_a62713f71166a253cddfb1cb4e9810bf0}} 
+\index{SFMLEvents.h@{SFMLEvents.h}!Layers@{Layers}}
+\index{Layers@{Layers}!SFMLEvents.h@{SFMLEvents.h}}
+\doxysubsubsection{\texorpdfstring{Layers}{Layers}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{SFMLEvents_8h_a62713f71166a253cddfb1cb4e9810bf0}{Layers}}}
+
+
+
+les différentes couche d\textquotesingle{}ordre d\textquotesingle{}affichage 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{ApplicationWrapper_8h_ad9c20a2c45e6937753ee64a24f0e1af8}{render}} 
+\end{DoxySeeAlso}

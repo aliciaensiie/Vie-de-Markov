@@ -294,6 +294,7 @@ CMakeFiles/schoolBattle.dir/src/main.c.o: ../src/main.c \
   /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/string.h \
   /home/arry/Documents/projetc++/Vie-de-Markov/CSFML/include/ViewWrapper.h \
   /home/arry/Documents/projetc++/Vie-de-Markov/CSFML/include/AnimationWrapper.h \
   /home/arry/Documents/projetc++/Vie-de-Markov/CSFML/include/ApplicationWrapper.h
