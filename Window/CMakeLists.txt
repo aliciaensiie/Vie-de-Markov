@@ -62,15 +62,6 @@ set(CPACK_NSIS_CREATE_ICONS_EXTRA
 #icon windows
 set(CPACK_NSIS_MUI_ICON "${CMAKE_CURRENT_SOURCE_DIR}/Ressources/Texture/school-battle.ico")
 
-
-#sfml library
-#if(UNIX)
-#	set(CPACK_DEBIAN_PACKAGE_DEPENDS "libsfml-graphics2.5")
-#elseif (WIN32)
-#	file(GLOB SFML_DLL "${SFML_PATH}/bin/*.dll")
-#	install(FILES ${SFML_DLL} DESTINATION bin)
-#endif()
-
 #dll window
 if(WIN32)
 	file (GLOB WINDOWS_DLL "{WINDOWS_PATH}/*.dll")

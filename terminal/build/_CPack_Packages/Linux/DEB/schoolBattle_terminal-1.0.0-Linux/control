@@ -1,0 +1,9 @@
+Architecture: amd64
+Description: 2 players needed
+Maintainer: Arry
+Package: schoolbattle_terminal
+Priority: optional
+Section: devel
+Version: 1.0.0
+Installed-Size: 345
+
