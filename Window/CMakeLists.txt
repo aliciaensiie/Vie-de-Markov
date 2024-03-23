@@ -39,7 +39,7 @@ endif()
 if(UNIX)
     target_link_libraries(schoolBattle -lcsfml-f -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lstdc++ m)
 elseif (WIN32)
-    target_link_libraries(schoolBattle sfml-graphics sfml-window sfml-system)
+    target_link_libraries(schoolBattle csfml-f sfml-graphics sfml-window sfml-system)
 endif()
 
 #generator package

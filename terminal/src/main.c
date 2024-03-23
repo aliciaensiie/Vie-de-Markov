@@ -17,12 +17,16 @@
 
 #define FIFO_FILE "/tmp/my_fifo"
 
+#ifndef OPEN_TERMINAL
+    #define OPEN_TERMINAL "gnome-terminal --geometry=125x40 -- bash -c 'cat /tmp/my_fifo; read'"
+#endif
+
 void rules() {
     // Créer le tube nommé ("named pipe")
     mkfifo(FIFO_FILE, 0666);
 
     //open a new terminal, wrote the contents of my_fifo in there and wait for user to write something and press ENTER.
-    system("gnome-terminal --geometry=125x40 -- bash -c 'cat /tmp/my_fifo; read'");
+    system(OPEN_TERMINAL);
 
 
     // Écrire dans le tube nommé

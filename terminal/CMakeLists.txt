@@ -21,6 +21,8 @@ endif()
 #compile option
 if(UNIX)
 	target_compile_options(schoolBattle_terminal PUBLIC -Wall -Wextra -std=c99 -g)
+elseif (WIN32)
+	target_compile_definitions(schoolBattle PUBLIC OPEN_TERMINAL="Start-Process powershell -ArgumentList '-NoExit -Command {Get-Content /tmp/my_fifo; Read-Host 'Press Enter to exit'}'")
 endif()
 
 #generator package
