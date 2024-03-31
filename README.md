@@ -52,7 +52,7 @@ FISCUS Felicien: librairie CSFML
 LEFEE FAUVEL Loic: programme du jeu en C en groupe
 
 
-KOUDIRATY Mohamed: programme du jeu en C en groupe
+KOUDIRATY Mohamed: programme du jeu en C en groupe  
 
 
 
