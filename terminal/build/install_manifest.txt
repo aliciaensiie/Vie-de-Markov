@@ -1,4 +1,0 @@
-/usr/bin/schoolBattle_terminal
-/usr/share/schoolBattle_terminal/Ressources/my_fifo.txt
-/usr/share/schoolBattle_terminal/Ressources/school2.ico
-/usr/share/applications/schoolBattle_terminal.desktop

@@ -44,7 +44,7 @@ set(CPACK_NSIS_MUI_ICON "${CMAKE_CURRENT_SOURCE_DIR}/Ressources/school2.ico")
 
 #dll window
 if(WIN32)
-	file (GLOB WINDOWS_DLL "{WINDOWS_PATH}/*.dll")
+	file (GLOB WINDOWS_DLL "${WINDOWS_PATH}/*.dll")
 	install(FILES ${WINDOWS_DLL} DESTINATION bin)
 endif()
 

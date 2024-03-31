@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=The School Battle / TERMINAL VERSION
-Comment=game
-Exec=/usr/bin/schoolBattle_terminal
-Icon=/usr/share/schoolBattle_terminal/Ressources/school2.ico
-Terminal=true
-Type=Application

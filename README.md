@@ -1,46 +1,9 @@
-# README
+# School Battle Game
 
-## Projet d'informatique effectué par le groupe 3
+## 2 Versions
+L'application est disponible sur Windows et Linux. Pour chaque OS, la version classique du jeu utilise une librairie graphique mais il existe également une version terminal pour jouer, comme son nom l'indique, dans le terminal. 
 
-Description: Vous trouverez dans la branche lot_b du groupe 3 :
-
-- le Makefile,
-- le Projet.gan
-- le dossier src, contenant tous les fichiers .c
-- le dossier headers, contenant tous les fichiers .h
-- le dossier obj, contenant tous les fichiers .o
-- le dossier bin, contenant tous les executables
-- Ce fichier README.md
-
----
-
-## Bibliotheque
-Elle fonctionne sur linux.
-Pour installer la librairie, référer vous au README contenu dans le dossier CSFML.
-
-## Compilation des programmes
-1. Faire la commande ```export LD_LIBRARY_PATH=./CSFML/SFML-2.5.1/lib``` si elle n'a pas été faite précedemment
-
-2. make 
-
-   Permet de générer le fichier executable bin/jeu.out contenant le jeu
-
-ATTENTION: Les Warnings "incomptible pointer types" sont normaux et ne sont pas des erreurs ou des oublis puisqu'ils sont à cause du principe d'héritage C++ qu'il n'y a pas en C.
-
-
-
----
-
-## Execution des programmes
-
-1. ./bin/jeu.out
-
-   Permet d'exécuter le jeu
-
----
-
-## Mode d'emplois du jeu
-
+## Description
 La Vie de Markov est un jeu où s'affrontent 2 joueuses qui doivent effectuer différents choix pour
 que les membres de leur école survivent
 
@@ -61,5 +24,39 @@ Au début d'une partie, les 2 joueuses possèdent 5 personnages(des membres) et 
 Il vous sera d'abord demandé de choisir si vous voulez jouer une carte et si oui laquelle. Sinon, vous possedez à chaque début de tour 5points de capital, vous devez alors choisir combien vous souhaitez en utilisé en tout. Il vous est par la suite possible de découper l'utilisation de ce capital en plusieurs actions. Ces points de capital vous permettent de modifier la probabilite de se déplacer d'une case à une autre. Pour 1 point de capital, la probabilité sera change de 0.1. 
 
 Lorsqu'une personne a joué, la carte choisie ou les probabilités changées s'appliquent et les personnes et le/les monstre(s) bougent. Les personnes se trouvant sur la meme case qu'un monstre sont mangés. Le jeu s'arrete lorsque qu'un joueur n'a plus de personnage. 
+---
 
-\nEtape pour changer la probabilite:\n1.Choisir le nombre capital que tu souhaites utiliser\n2.Choisir la zone 1 a partir de laquelle les probabilites changent\n3Choisir une zone 2 afin que la probabilite d'aller de la zone 1 vers la zone 2 augmente \n4.Choisir une zone 3 afin que la probabilite d'aller de la zone 1 vers la zone 3 diminue 
+## Bibliotheque
+La version basique du jeu utilise la librairie CSFML, adaptation en C de la librairie SFML.
+
+## Utilisation
+Premiérement, tu auras besoin d'installer SFML (version 2.5 pour Linux, version 2.6 pour Windows) ainsi que CMake. Tu dois alors changer le chemin de la librarie SFML dans le CMakeLists du dossier window (ligne 6 pour Linux et ligne 8 pour Windows).
+
+Il existe 3 sous-dossiers: window pour la version graphique, terminal pour la version qui se joue dans le terminal et CSFML qui contient la librairie CSFML.
+Window et terminal contiennent chacun leur CMakeLists à compiler et construire dans un dossier build. 
+
+Les commandes pour compiler et construire sont: 
+<pre>
+    cmake ..
+    cmake --build .
+</pre>
+Tu peux alors trouver l'éxécutable dans le dossier build.
+
+ATTENTION: Les Warnings "incomptible pointer types" sont normaux et ne sont pas des erreurs ou des oublis puisqu'ils sont à cause du principe d'héritage C++ qu'il n'y a pas en C.
+
+
+## Authors
+FISCUS Felicien: librairie CSFML
+
+
+LEFEE FAUVEL Loic: programme du jeu en C en groupe
+
+
+KOUDIRATY Mohamed: programme du jeu en C en groupe
+
+
+PLATH alicia:  - programme du jeu en C en groupe, 
+
+               - librairie dynamique de CSFML pour linux et librairie dynamique et static de CSFML pour Windows, 
+               
+               - 2 versions d'application du jeu pour Windows/Linux
