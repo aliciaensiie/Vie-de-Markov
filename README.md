@@ -4,14 +4,14 @@
 L'application est disponible sur Windows et Linux. Pour chaque OS, la version classique du jeu utilise une librairie graphique mais il existe également une version terminal pour jouer, comme son nom l'indique, dans le terminal. 
 
 ## Description
-La Vie de Markov est un jeu où s'affrontent 2 joueuses qui doivent effectuer différents choix pour
+School Battle est un jeu où s'affrontent 2 joueuses qui doivent effectuer différents choix pour
 que les membres de leur école survivent
 
 ### Histoire
 
 La porte interdimensionnelle entre les univers parallèle n'était pas bien refermée. De terribles monstres se sont échappés et arpentent maintenant notre planète. L'ENSIIE doit maintenant survivre dans un monde où règne la terreur: un seul moyen de survivre, espérer que les autres écoles d'ingénieur se fassent manger avant elle.
 
-### début du jeu :
+### Début du jeu :
 
 Au début d'une partie, les 2 joueuses possèdent 5 personnages(des membres) et 5 cartes :
 
@@ -24,10 +24,10 @@ Au début d'une partie, les 2 joueuses possèdent 5 personnages(des membres) et 
 Il vous sera d'abord demandé de choisir si vous voulez jouer une carte et si oui laquelle. Sinon, vous possedez à chaque début de tour 5points de capital, vous devez alors choisir combien vous souhaitez en utilisé en tout. Il vous est par la suite possible de découper l'utilisation de ce capital en plusieurs actions. Ces points de capital vous permettent de modifier la probabilite de se déplacer d'une case à une autre. Pour 1 point de capital, la probabilité sera change de 0.1. 
 
 Lorsqu'une personne a joué, la carte choisie ou les probabilités changées s'appliquent et les personnes et le/les monstre(s) bougent. Les personnes se trouvant sur la meme case qu'un monstre sont mangés. Le jeu s'arrete lorsque qu'un joueur n'a plus de personnage. 
----
+
 
 ## Bibliotheque
-La version basique du jeu utilise la librairie CSFML, adaptation en C de la librairie SFML.
+La version basique du jeu utilise les librairies SFML et CSFML, adaptation en C de la librairie SFML.
 
 ## Utilisation
 Premiérement, tu auras besoin d'installer SFML (version 2.5 pour Linux, version 2.6 pour Windows) ainsi que CMake. Tu dois alors changer le chemin de la librarie SFML dans le CMakeLists du dossier window (ligne 6 pour Linux et ligne 8 pour Windows).
@@ -55,8 +55,8 @@ LEFEE FAUVEL Loic: programme du jeu en C en groupe
 KOUDIRATY Mohamed: programme du jeu en C en groupe
 
 
-PLATH alicia:  - programme du jeu en C en groupe, 
+PLATH alicia:  * programme du jeu en C en groupe, 
 
-               - librairie dynamique de CSFML pour linux et librairie dynamique et static de CSFML pour Windows, 
+               * librairie dynamique de CSFML pour linux et librairie dynamique et static de CSFML pour Windows, 
                
-               - 2 versions d'application du jeu pour Windows/Linux
+               * 2 versions d'application du jeu pour Windows/Linux
