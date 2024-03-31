@@ -43,7 +43,7 @@ void affichage_cartes(joueuse* joueuse){
             }
         }
         if (j==0){
-            printf("Tu n'as plus de cartes\n");
+            printf("Tu n as plus de cartes\n");
         }
         
     }
@@ -224,7 +224,7 @@ void plateau(map* la_map){
 //------------------------------------------------------------
 
 void matrice(map* la_map){
-    printf("Un noeud (i,j) correspond à la probabilité d'aller de i vers j \n");
+    printf("Un noeud (i,j) correspond à la probabilité d aller de i vers j \n");
     printf("  %s%8s%7s%7s%7s%7s%7s%7s%7s%7s%7s","\\ ", "Z1", "Z2","Z3", "Z4", "Z5", "Z6","Z7", "Z8", "Z9","Z10");
     if (getTaille(la_map)==11){                                           
         printf("%7s \n", "Z11");
@@ -462,7 +462,7 @@ int effet_rioboo(joueuse* joueuse_ce_tour){
 void utilisation_capital(joueuse * joueuse_ce_tour, map* la_map){
     if (effet_rioboo(joueuse_ce_tour)!=100){
         int j=effet_rioboo(joueuse_ce_tour);
-        printf("Suite à l'utilisation de la carte Rioboo au tour précédent, tu ne peux pas choisir ton capital\n");
+        printf("Suite à l utilisation de la carte Rioboo au tour précédent, tu ne peux pas choisir ton capital\n");
         for (int i=0; i<getCapital(joueuse_ce_tour); i++){
             effet_Rioboo_prochain_tour(la_map, joueuse_ce_tour, parcourir_cliste(getMain(joueuse_ce_tour), j));
         }
@@ -540,7 +540,7 @@ int redemande_carte(){
 
 //---------------------------------------------------------------------
 void plus_de_carte(){
-    printf("Tu n'as plus de cartes\n");
+    printf("Tu n as plus de cartes\n");
     printf("Tu as donc gaché ton tour, fait attention la prochaine fois\n");
 }
 
@@ -645,7 +645,7 @@ void lancement_jeu(){
 int deplacement_montre(){
     int choix=0;
     printf("\033[36;01mOù souhaites-tu déplacer le monstre ?\033[00m\n");
-    printf("Entre le numero d'une zone\n");
+    printf("Entre le numero d une zone\n");
     int MAX_LENGTH=3;
     char * buffer = (char *) malloc( MAX_LENGTH );
     char * buffer2 = (char *) malloc( MAX_LENGTH );

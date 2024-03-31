@@ -33,6 +33,7 @@ char** listChar(){
         for (int j=0; j<SIZE_PATH_RESSOURCES; j++){
             message[j]=PATH_RESSOURCES[j];
         }
+        message[SIZE_PATH_RESSOURCES] = '\0';
         list[i]= message;
     }
     return list;
@@ -40,14 +41,15 @@ char** listChar(){
 
 
 int main()
-{
+{   
     srand(time(NULL));
+    
     // Création et ouverture de l'application
     Application* app = getNewApplication(WIDTH, HEIGHT, "La Vie De Markov");
-
+    
     // Ajout des textures
     char ** list = listChar();
-    add_Texture(app, strncat(list[0], "/Texture/merabet_bleu.png",26), Merabettex);
+    add_Texture(app, strncat(list[0],"/Texture/merabet_bleu.png",26), Merabettex);
     add_Texture(app, strncat(list[1], "/Texture/Bannourd_bleu.png", 27), Bannourtex); 
     add_Texture(app, strncat(list[3], "/Texture/honore_bleu.png",25), Honoretex);  
     add_Texture(app, strncat(list[4], "/Texture/goilard_bleu.png", 26), Goilardtex); 

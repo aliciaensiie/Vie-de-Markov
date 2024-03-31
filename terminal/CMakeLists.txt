@@ -14,15 +14,12 @@ if(UNIX)
 	add_executable(schoolBattle_terminal ${SOURCE} )
 elseif (WIN32)
 	#executable like an application (WIN32) and file with path to the icon(Appicon.rc)
-	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
-	add_executable(schoolBattle_terminal WIN32 ${SOURCE} Appicon.rc)
+	add_executable(schoolBattle_terminal ${SOURCE} Appicon.rc)
 endif()
 
 #compile option
 if(UNIX)
 	target_compile_options(schoolBattle_terminal PUBLIC -Wall -Wextra -std=c99 -g)
-elseif (WIN32)
-	target_compile_definitions(schoolBattle PUBLIC OPEN_TERMINAL="Start-Process powershell -ArgumentList '-NoExit -Command {Get-Content /tmp/my_fifo; Read-Host 'Press Enter to exit'}'")
 endif()
 
 #generator package

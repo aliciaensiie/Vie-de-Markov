@@ -13,6 +13,10 @@
 #include <stdlib.h>
 #include "math.h"
 
+#ifndef __FLT_EPSILON__
+  #define __FLT_EPSILON__ 1.19209e-07
+#endif
+
 //changer le create 
 
 struct zone {

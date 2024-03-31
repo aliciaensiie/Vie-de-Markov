@@ -43,6 +43,10 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE FILE FILES "/home/arry/Documents/projetc++/Vie-de-Markov/Window/../CSFML/lib/libcsfml_library.so.1.0.1")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/schoolBattle" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/schoolBattle")
     file(RPATH_CHECK
@@ -54,7 +58,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/schoolBattle")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/schoolBattle"
-         OLD_RPATH "/home/arry/Documents/projetc++/Vie-de-Markov/Window/schoolBattle:/home/arry/Documents/projetc++/Vie-de-Markov/Window/PUBLIC:/home/arry/Documents/projetc++/Vie-de-Markov/Window/../CSFML/SFML-2.5.1/lib:/home/arry/Documents/projetc++/Vie-de-Markov/Window/../CSFML/lib:"
+         OLD_RPATH "/home/arry/Documents/projetc++/Vie-de-Markov/Window/schoolBattle:/home/arry/Documents/projetc++/Vie-de-Markov/Window/PUBLIC:/home/arry/Documents/projetc++/Vie-de-Markov/Window/../../SFML-2.5.1/lib:/home/arry/Documents/projetc++/Vie-de-Markov/Window/../CSFML/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/schoolBattle")
@@ -64,10 +68,6 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/schoolBattle" TYPE DIRECTORY PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_WRITE GROUP_EXECUTE WORLD_READ WORLD_WRITE WORLD_EXECUTE FILES "/home/arry/Documents/projetc++/Vie-de-Markov/Window/Ressources")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/schoolBattle" TYPE DIRECTORY PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_WRITE GROUP_EXECUTE WORLD_READ WORLD_WRITE WORLD_EXECUTE FILES "/home/arry/Documents/projetc++/Vie-de-Markov/Window/../CSFML")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

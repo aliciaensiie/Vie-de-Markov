@@ -14,6 +14,7 @@ set(CPACK_BUILD_SOURCE_DIRS "/home/arry/Documents/projetc++/Vie-de-Markov/Window
 set(CPACK_CMAKE_GENERATOR "Unix Makefiles")
 set(CPACK_COMPONENT_UNSPECIFIED_HIDDEN "TRUE")
 set(CPACK_COMPONENT_UNSPECIFIED_REQUIRED "TRUE")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libsfml-graphics2.5")
 set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Arry")
 set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_FILE "/usr/share/cmake-3.22/Templates/CPack.GenericDescription.txt")
 set(CPACK_DEFAULT_PACKAGE_DESCRIPTION_SUMMARY "schoolBattle built using CMake")

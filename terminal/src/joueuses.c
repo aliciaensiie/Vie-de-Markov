@@ -69,6 +69,7 @@ joueuse *creer_joueuse(int tour_de_joueuse, map* la_map){
   joueuse *j1 = malloc(sizeof(joueuse));
 
   j1->tour_de_joueuse = tour_de_joueuse;
+  j1->main = NULL;
 
   if (tour_de_joueuse==0 || tour_de_joueuse==1){
       j1->capital = 5;

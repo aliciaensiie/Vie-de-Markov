@@ -2,7 +2,11 @@ cmake_minimum_required(VERSION 3.10)
 project(schoolBattle)
 
 #set PATH
-set(SFML_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../CSFML/SFML-2.5.1)
+if (UNIX)
+set(SFML_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../SFML-2.5.1)
+elseif(WIN32)
+set(SFML_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../../SFML-2.6.0)
+endif()
 set(CSFML_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../CSFML)
 
 if(WIN32)
@@ -21,7 +25,6 @@ if(UNIX)
 	add_executable(schoolBattle ${SOURCE} )
 elseif (WIN32)
 	#executable like an application (WIN32) and file with path to the icon(Appicon.rc)
-	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup")
 	add_executable(schoolBattle WIN32 ${SOURCE} Appicon.rc)
 endif()
 
@@ -31,15 +34,16 @@ if(UNIX)
 	target_compile_definitions(schoolBattle PUBLIC PATH_RESSOURCES="/usr/share/schoolBattle/Ressources")
 	target_compile_definitions(schoolBattle PUBLIC SIZE_PATH_RESSOURCES=35)
 elseif(WIN32)
+	target_compile_options(schoolBattle PUBLIC -g)
 	target_compile_definitions(schoolBattle PUBLIC PATH_RESSOURCES="./Ressources")
 	target_compile_definitions(schoolBattle PUBLIC SIZE_PATH_RESSOURCES=13)
 endif()
 
 #link libraries
 if(UNIX)
-    target_link_libraries(schoolBattle -lcsfml-f -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lstdc++ m)
+    target_link_libraries(schoolBattle -lcsfml_library -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lstdc++ m)
 elseif (WIN32)
-    target_link_libraries(schoolBattle csfml-f sfml-graphics sfml-window sfml-system)
+    target_link_libraries(schoolBattle csfml_library sfml-graphics sfml-window sfml-system)
 endif()
 
 #generator package
@@ -62,9 +66,20 @@ set(CPACK_NSIS_CREATE_ICONS_EXTRA
 #icon windows
 set(CPACK_NSIS_MUI_ICON "${CMAKE_CURRENT_SOURCE_DIR}/Ressources/Texture/school-battle.ico")
 
+
+#sfml library
+if(UNIX)
+	set(CPACK_DEBIAN_PACKAGE_DEPENDS "libsfml-graphics2.5")
+	install(FILES "${CSFML_PATH}/lib/libcsfml_library.so.1.0.1" DESTINATION lib )
+elseif (WIN32)
+	file(GLOB SFML_DLL "${SFML_PATH}/bin/*.dll")
+	install(FILES ${SFML_DLL} DESTINATION bin)
+	install(FILES "${CSFML_PATH}/lib/csfml_library.dll" DESTINATION bin )
+endif()
+
 #dll window
 if(WIN32)
-	file (GLOB WINDOWS_DLL "{WINDOWS_PATH}/*.dll")
+	file (GLOB WINDOWS_DLL "${WINDOWS_PATH}/*.dll")
 	install(FILES ${WINDOWS_DLL} DESTINATION bin)
 endif()
 
@@ -74,10 +89,8 @@ install(TARGETS schoolBattle RUNTIME DESTINATION bin)
 #install ressources + permissons
 if (UNIX)
 	install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Ressources" DESTINATION share/schoolBattle FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_WRITE GROUP_EXECUTE WORLD_READ WORLD_WRITE WORLD_EXECUTE)
-	install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../CSFML" DESTINATION share/schoolBattle FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_WRITE GROUP_EXECUTE WORLD_READ WORLD_WRITE WORLD_EXECUTE)
 elseif (WIN32)
 	install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Ressources" DESTINATION . )
-	install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../CSFML" DESTINATION . )
 	set(CPACK_NSIS_EXTRA_INSTALL_COMMANDS "AccessControl::GrantOnFile \\\".\\\\Ressources\\\" \\\"(BU)\\\" \\\"FullAccess\\\"")
 endif()
 

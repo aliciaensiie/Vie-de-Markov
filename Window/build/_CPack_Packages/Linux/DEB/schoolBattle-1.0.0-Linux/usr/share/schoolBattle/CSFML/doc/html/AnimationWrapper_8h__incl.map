@@ -1,7 +1,0 @@
-<map id="AnimationWrapper.h" name="AnimationWrapper.h">
-<area shape="rect" id="node1" title="interface C de l&#39;objet C++ Animation" alt="" coords="67,5,222,32"/>
-<area shape="rect" id="node2" href="$ApplicationWrapper_8h.html" title="ceci est l&#39;interface C pour l&#39;objet C++ Application" alt="" coords="5,80,167,107"/>
-<area shape="rect" id="node4" href="$Utility_8h.html" title="header pour tout ce qui relève des fonctions et structure utiles mais qui sont très générale comme le..." alt="" coords="167,155,239,181"/>
-<area shape="rect" id="node3" href="$SFMLEvents_8h.html" title="petite header pour stocker tout les différents évènements" alt="" coords="29,155,143,181"/>
-<area shape="rect" id="node5" title=" " alt="" coords="169,229,237,256"/>
-</map>
