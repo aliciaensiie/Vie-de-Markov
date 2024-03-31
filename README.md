@@ -55,8 +55,7 @@ LEFEE FAUVEL Loic: programme du jeu en C en groupe
 KOUDIRATY Mohamed: programme du jeu en C en groupe
 
 
-PLATH alicia:  * programme du jeu en C en groupe, 
-
-               * librairie dynamique de CSFML pour linux et librairie dynamique et static de CSFML pour Windows, 
-               
-               * 2 versions d'application du jeu pour Windows/Linux
+PLATH alicia:  
+- programme du jeu en C en groupe, 
+- librairie dynamique de CSFML pour linux et librairie dynamique et static de CSFML pour Windows,               
+- 2 versions d'application du jeu pour Windows/Linux
